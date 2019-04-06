@@ -1,15 +1,15 @@
 title: John Smith
 description: My Personal Blog
 author: John Smith
-logo: /hcz-jekyll-blog/static/img/avatar.png
-github: https://github.com/codeasashu
+logo: /static/img/avatar.png
+github: https://github.com/ictyangye
 about: Freelance developer
 
-#baseurl: "https://codeasashu.github.io/hcz-jekyll-blog"
-#url: "https://codeasashu.github.io/hcz-jekyll-blog"
+#baseurl: "https://ictyangye.github.io/hcz-jekyll-blog"
+#url: "https://ictyangye.github.io/hcz-jekyll-blog"
 
-baseurl: "https://ictyangye.github.io/"
-url: "https://ictyangye.github.io/"
+baseurl: "https://ictyangye.github.io"
+url: "https://ictyangye.github.io"
 
 allowsearch: true
 

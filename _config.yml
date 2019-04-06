@@ -5,8 +5,11 @@ logo: /hcz-jekyll-blog/static/img/avatar.png
 github: https://github.com/codeasashu
 about: Freelance developer
 
-baseurl: "https://codeasashu.github.io/hcz-jekyll-blog"
-url: "https://codeasashu.github.io/hcz-jekyll-blog"
+#baseurl: "https://codeasashu.github.io/hcz-jekyll-blog"
+#url: "https://codeasashu.github.io/hcz-jekyll-blog"
+
+baseurl: "https://ictyangye.github.io/"
+url: "https://ictyangye.github.io/"
 
 allowsearch: true
 

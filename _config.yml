@@ -1,9 +1,9 @@
 title: Ye Yang
 description: My Personal Blog
-author: 杨晔(Ye Yang)
+author: Ye Yang
 logo: /static/img/avatar.png
 github: https://github.com/ictyangye
-about: 中国科学院计算技术研究所直博生(PHD student in ICT of CAS)
+about: PHD student in ICT of CAS
 
 baseurl: "https://ictyangye.github.io"
 url: "https://ictyangye.github.io"
@@ -21,7 +21,7 @@ share:
 enableTags: true
 tagarray: []
 
-paginate: 5
+paginate: 20
 per_page: 5
 paginate_path: "/page:num/"
 markdown: kramdown

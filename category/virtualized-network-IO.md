@@ -1,6 +1,6 @@
 ---
 layout: posts_by_category
-categories: virtualized-network-IO
+categories: virtualized network I/O
 title: virtualized network I/O
-permalink: /category/just-for-fun
+permalink: /category/virtualized-network-IO
 ---

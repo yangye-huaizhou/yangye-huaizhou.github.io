@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DPDK安装配置（附脚本）及示例程序运行
-date:   2017-05-01 13:50:39
+date:   2017-05-10 23:30:39
 categories: DPDK
 ---
 去年曾经写过一篇在虚拟机里配置DPDK的文章，当时DPDK还没有支持ubuntu16.04，而且当时还不会shell编程，总体来说还是比较幼稚的。今天整理了一下写了这篇ubuntu16.04实体机下的DPDK配置博文。
@@ -28,12 +28,12 @@ make install
 sudo ln -s /usr/local/lib/libpcap.so.1 /usr/lib/libpcap.so.1
 ```
 
-## 2. 安装DPDK
+# 2. 安装DPDK
 将压缩包解压缩，按照下面的步骤安装：
 
 *注意，以下操作中有些涉及特权级的，如果operation denied，加上sudo即可*
 
-##### 2.1. 配置并编译DPDK,架构为64位x86linux系统，gcc编译
+### 2.1. 配置并编译DPDK,架构为64位x86linux系统，gcc编译
 ```
 make config T=x86_64-native-linuxapp-gcc
 sed -ri 's,(PMD_PCAP=).*,\1y,' build/.config
@@ -43,7 +43,7 @@ make
 
 编译过程如上图所示，其中如果有错，多数是由于依赖项，安装上依赖项就可以了。
 
-##### 2.2. 预配置大页存储
+### 2.2. 预配置大页存储
 挂载了一个NUMA节点node0，最后一句命令的意思是在node0上预留了64个2MB的大页，即64*2048kB=128MB的内存
 ```
 mkdir -p /mnt/huge
@@ -59,7 +59,7 @@ ifconfig
 
 从图中看出，两个网卡分别为enp3s0和wlp2s0。
 
-##### 2.3. 加载模块和绑定网卡
+### 2.3. 加载模块和绑定网卡
 ```
 ifconfig enp3s0 down//先把有线网卡关掉，不然下一步会报错的。
 modprobe uio  
@@ -155,7 +155,7 @@ done
 
 ![恢复.png](http://upload-images.jianshu.io/upload_images/5971286-1721086435e75e69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 3. 运行示例程序：
+# 3. 运行示例程序：
 
 **注意，这里演示用的是pcap的vdev，所以不需要绑定网卡，不然会报错找不到设备。当然vdev也可以按照官方教程里给的跑dpdk的vdev**
 ```

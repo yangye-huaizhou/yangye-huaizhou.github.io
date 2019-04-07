@@ -32,7 +32,7 @@ DPDK的一个处理器核每秒可以处理约33M个报文，大概30纳秒处�
 2. eal_parse_args()函数，解析-c参数，确认哪些核是可以用的，并且设置第一个核为MASTER。
 3. 为每一个SLAVE核创建线程，并调用eal_thread_set_affinity()绑定CPU，每个线程的执行的其实是一个主体是while死循环的调用不同模块注册到lcore_config[lcore_id].f的回调函数eal_thread_loop()。
 
-**注：在eal_thread_loop()中，将线程绑定核，然后置于了等待的状态。绑定核函数基于linux原型函数f_pthread_setaffinity_np，在pthread_shim.c中有对各种pthread函数封装的实现。*
+***注：在eal_thread_loop()中，将线程绑定核，然后置于了等待的状态。绑定核函数基于linux原型函数f_pthread_setaffinity_np，在pthread_shim.c中有对各种pthread函数封装的实现。***
 
 ### 3. lcore的注册：
 不同模块需要调用rte_eal_mp_remote_launch()，将自己的回调函数注册到config[].f中。每个核上的线程都会调用该函数来实现自己的处理函数。lcore启动过程和任务分发如下：

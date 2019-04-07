@@ -2,7 +2,7 @@
 layout: post
 title: 如何把ubuntu玩成windows
 date:   2017-05-09 23:12:39
-categories: just for fun
+categories: just-for-fun
 ---
 
 Linux系统作为一款优秀且开源的现代操作系统，被科研教育界广泛应用。其中使用最多且最适合新手的发行版就是ubuntu。在ubuntu操作系统中，最困扰的一点就是，无法像windows系统一样有QQ、微信以及音乐播放器等经常使用的工具。那么这篇文章就是告诉你怎样安装这些常用软件，解决一些基本的问题，更好地玩转ubuntu系统~

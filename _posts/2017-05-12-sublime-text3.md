@@ -2,7 +2,7 @@
 layout: post
 title: sublime text3安装c语言环境插件
 date:   2017-05-12 23:30:39
-categories: just for fun
+categories: just-for-fun
 ---
 以前在linux下看源码一直习惯用source insight，然而最近发现sublime text的插件好多好强大，完全替代了source insight，转战sublime还有个重要原因是SI的字体太丑了。今天就来说说怎么在sublime下搭建c语言的环境吧，主要是自动补全还有跳转定义等功能。
 

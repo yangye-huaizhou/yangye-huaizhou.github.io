@@ -1,18 +1,18 @@
 [
   {
-    "icon": "fa-facebook",
+    "icon": "fa-qq",
     "link": ""
   },
   {
-    "icon": "fa-twitter",
+    "icon": "fa-weixin",
     "link": ""
   },
   {
-    "icon": "fa-linkedin",
+    "icon": "fa-skype",
     "link": ""
   },
   {
-    "icon": "fa-stack-exchange",
+    "icon": "fa-envelope",
     "link": ""
   }
 ]

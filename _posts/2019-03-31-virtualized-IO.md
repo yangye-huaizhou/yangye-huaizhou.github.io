@@ -84,11 +84,11 @@ DPDK针对这两点问题都做了一定程度的解决。另外还提供了一�
 而DPDK 18.05以后的版本似乎也解决了这一灵活性问题，为了充分发掘标准网卡（区别于智能网卡）在flow（流）层面上的功能，推出了VF representer。可以直接将OVS上的流表规则下发到网卡上，实现网卡在VF之间的交换功能，这样就实现了高效灵活的虚拟化网络配置。
 
 ***引用：**
-全虚拟化、半虚拟化和I/O透传主体观点来自《深入浅出DPDK》
-[1] Russell R . virtio : Towards a De-Facto Standard For Virtual I/O Devices[M]. ACM, 2008.
-图引用：
-图1 引用自 IBM developer <https://www.ibm.com/developerworks/cn/linux/1402_caobb_virtio/>
-图2、4、5 引用自 “Accelerating the Path to the Guest - Maryam Tahhan and Kevin Traynor, Intel”
-图6 引用自 KVM forum 2017 “virtio: vhost Data Path Acceleration towards NFV Cloud - Cunming Liang, Intel”
+全虚拟化、半虚拟化和I/O透传主体观点来自《深入浅出DPDK》  
+[1] Russell R . virtio : Towards a De-Facto Standard For Virtual I/O Devices[M]. ACM, 2008.  
+图引用：  
+图1 引用自 IBM developer <https://www.ibm.com/developerworks/cn/linux/1402_caobb_virtio/>  
+图2、4、5 引用自 “Accelerating the Path to the Guest - Maryam Tahhan and Kevin Traynor, Intel”  
+图6 引用自 KVM forum 2017 “virtio: vhost Data Path Acceleration towards NFV Cloud - Cunming Liang, Intel”  
 图7 引用自 DPDK官网文档
  <https://doc.dpdk.org/guides/prog_guide/switch_representation.html?highlight=representer>*

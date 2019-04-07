@@ -2,7 +2,7 @@
 layout: post
 title: 浅谈网络I/O全虚拟化、半虚拟化和I/O透传
 date:   2019-03-31 16:53:39
-categories: virtualized-network-I/O
+categories: virtualized-network-IO
 ---
 众所周知，虚拟化技术旨在将有限的物理资源（CPU、内存等）抽象成更多份的虚拟资源供上层应用使用。最常用的领域有云服务提供商，SDN/NFV，比如：在一台物理服务器上运行成百上千的虚拟机，并将单个虚拟机出租给不同用户。
 

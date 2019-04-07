@@ -2,7 +2,7 @@
 layout: post
 title: Vhost-user详解
 date:   2019-04-01 17:33:39
-categories: virtualized-network-I/O
+categories: virtualized-network-IO
 ---
 
 在软件实现的网络I/O半虚拟化中，vhost-user在性能、灵活性和兼容性等方面达到了近乎完美的权衡。虽然它的提出已经过了四年多，也已经有了越来越多的新特性加入，但是万变不离其宗，那么今天就从整个vhost-user数据通路的建立过程，以及数据包传输流程等方面详细介绍下vhost-user架构，本文基于DPDK 17.11分析。

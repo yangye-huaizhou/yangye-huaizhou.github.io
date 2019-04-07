@@ -2,7 +2,7 @@
 layout: post
 title: DPDK+OVS+QEMU搭建vhost-user实验环境
 date:   2017-09-12 09:56:39
-categories: virtualized-network-I/O
+categories: virtualized-network-IO
 ---
 
 目前在virtio后端驱动方面性能最好的是用户态的vhost-user，而DPDK又是用户态vhost实现里使用最广泛的。下面介绍一下怎么搭建这样一个vhost-user实验环境。我们这里使用的全部是最新的版本（ovs2.8+DPDK17.05+qemu2.9.93）.

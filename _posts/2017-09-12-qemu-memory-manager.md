@@ -2,7 +2,7 @@
 layout: post
 title: qemu内存管理以及vhost-user的协商机制下的前后端内存布局
 date:   2017-09-12 10:19:39
-categories: virtualized-network-I/O
+categories: virtualized-network-IO
 ---
 
 **概括来说，qemu和KVM在内存管理上的关系就是：在虚拟机启动时，qemu在qemu进程地址空间申请内存，即内存的申请是在用户空间完成的。通过kvm提供的API，把地址信息注册到KVM中，这样KVM中维护有虚拟机相关的slot，这些slot构成了一个完整的虚拟机物理地址空间。slot中记录了其对应的HVA，页面数、起始GPA等，利用它可以把一个GPA转化成HVA，这正是KVM维护EPT的技术核心。整个内存虚拟化可以分为两部分：qemu部分和kvm部分。qemu完成内存的申请，kvm实现内存的管理。**

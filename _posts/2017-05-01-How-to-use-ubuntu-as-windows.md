@@ -15,17 +15,17 @@ Linux系统作为一款优秀且开源的现代操作系统，被科研教育界
 
 在安装完系统以后，需要手动安装的软件如下，可以根据自己需要有选择性地安装：
 
-# 1.安装Vim
+## 1.安装Vim
 sudo apt-get install vim
 
-# 2.安装谷歌浏览器
+## 2.安装谷歌浏览器
 谷歌浏览器的下载地址：https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 命令行安装：
 sudo apt-get install libappindicator1 libindicator7  
 sudo dpkg -i google-chrome-stable_current_amd64.deb   
 sudo apt-get -f install  
 
-# 3.安装搜狗输入法和WPS
+## 3.安装搜狗输入法和WPS
 直接去官网http://pinyin.sogou.com/linux/ 下载对于系统（32位/64位）的安装包deb文件
 命令行安装：
 sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb   
@@ -66,30 +66,30 @@ sudo dpkg-reconfigure ttf-mscorefonts-installer
 官方中文字体包：
 链接: https://pan.baidu.com/s/1pL8suaJ 密码: y8as
 
-# 4.安装git、cmake、openssh-server
+## 4.安装git、cmake、openssh-server
 命令行输入：
 sudo apt-get install git cmake openssh-server
 
-# 5.安装Sublime Text 3编辑器
+## 5.安装Sublime Text 3编辑器
 Sublime text3编辑器的字体非常好看，而且还有很多强大的插件。安装如下
 sudo add-apt-repository ppa:webupd8team/sublime-text-3    
 sudo apt-get update    
 sudo apt-get install sublime-text
 
-# 6.安装oracle java
+## 6.安装oracle java
 sudo add-apt-repository ppa:webupd8team/java    
 sudo apt-get update    
 sudo apt-get install oracle-java8-installer
 安装时间取决于下载速度
 
-# 7.安装eclipse
+## 7.安装eclipse
 直接去官网下载免安装的压缩包，或者直接走这里的传送门：
 链接: https://pan.baidu.com/s/1qYbgo5e 密码: dwf8
 下载解压后，由于是免安装，直接运行文件夹下的eclipse即可，同时我们也可以建立链接，从而在命令行输入eclipse就直接打开软件：
 cd /usr/local/bin
 sudo ln -s /home/torronto/eclipse/eclipse  (后面路径是你eclipse可执行文件的位置)
 
-# 8.安装cuda
+## 8.安装cuda
 64位传送门：
 链接: https://pan.baidu.com/s/1slPjpG5 密码: k9v6
 使用命令，将deb文件解包：
@@ -116,7 +116,7 @@ sudo source /etc/profile
 nvcc --version出现版本号，即可用了
 
 
-# 9.安装QQ：
+## 9.安装QQ：
 安装包传送门：
 链接: https://pan.baidu.com/s/1i4HHOzV 密码: 18rj
 
@@ -150,15 +150,15 @@ export QT_IM_MODULE="fcitx"
 保存重启。
 以后每次重启若出现没有输入法，只需在命令行输入 fcitx启动输入法即可。
 
-# 10.安装微信：
+## 10.安装微信：
 此版本是基于网页版的微信，免安装，解压即用，传送门：
 链接: https://pan.baidu.com/s/1pKVcOiB 密码: k7cf
 
 
-# 11.安装网易云音乐：
+## 11.安装网易云音乐：
 网易云音乐现在推出了linux版，真是一个绝好的消息，这比以前在ubuntu下勉强安装深度音乐要好多了。官网：http://music.163.com/#/download 选择linux版，下载然后dpkg -i安装。
 
-# 12.安装视频播放器：
+## 12.安装视频播放器：
 Ubuntu下视频播放器首推SMplayer，安装：
 sudo apt-get install smplayer
 

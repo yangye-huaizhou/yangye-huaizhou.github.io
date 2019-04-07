@@ -21,7 +21,7 @@ share:
 enableTags: true
 tagarray: []
 
-paginate: 20
+paginate: 5
 per_page: 20
 paginate_path: "/page:num/"
 markdown: kramdown

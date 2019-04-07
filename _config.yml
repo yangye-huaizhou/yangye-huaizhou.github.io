@@ -1,12 +1,9 @@
-title: John Smith
+title: Ye Yang
 description: My Personal Blog
-author: John Smith
+author: Ye Yang
 logo: /static/img/avatar.png
 github: https://github.com/ictyangye
-about: Freelance developer
-
-#baseurl: "https://ictyangye.github.io/hcz-jekyll-blog"
-#url: "https://ictyangye.github.io/hcz-jekyll-blog"
+about: PHD student in ICT of CAS
 
 baseurl: "https://ictyangye.github.io"
 url: "https://ictyangye.github.io"

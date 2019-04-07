@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use ubuntu as windows
+title: 如何把ubuntu玩成windows
 date:   2017-05-01 13:50:39
 categories: just-for-fun
 ---

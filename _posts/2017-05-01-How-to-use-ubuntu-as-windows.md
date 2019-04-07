@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何把ubuntu玩成windows
-date:   2017-05-01 13:50:39
+date:   2017-05-09 23:12:39
 categories: just-for-fun
 ---
 

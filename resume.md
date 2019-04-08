@@ -10,10 +10,7 @@ permalink: /resume/
 
 **Ye Yang**
 
-<font color="#20B2AA">Email</font>yangye@ict.ac.cn</td>    
-
-
-$\color{red}{Email}$ yangye@ict.ac.cn  
+<font color="#20B2AA" style="float:left;">Email</font> yangye@ict.ac.cn
 
 Gender Male | Nationality China  
 Date of birth Jan 20th, 1995  

@@ -10,7 +10,8 @@ permalink: /resume/
 
 **Ye Yang**
 
-<font color="#20B2AA">Gender:&nbsp;</font>Male&nbsp;|&nbsp;<font color="#20B2AA">Nationality:&nbsp;</font>China
+<p><font color="#20B2AA">Gender:&nbsp;</font>Male&nbsp;|&nbsp;<font color="#20B2AA">Nationality:&nbsp;</font>China</p>
+
 <font color="#20B2AA">Date of birth:&nbsp;</font>Jan 20th,&nbsp;1995  
 
 <font color="#20B2AA" style="float:left;">Gender: </font>Male | <font color="#20B2AA" style="float:left;">Nationality: </font>China  

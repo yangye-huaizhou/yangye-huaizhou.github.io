@@ -5,29 +5,27 @@ permalink: /resume/
 ---
 
 ### **PERSONAL INFORMATION**
-
+---
 <img class="profile-picture" src="sherlock.jpg">
 
 **Ye Yang**
 
-<p><font color="#20B2AA">Gender:&nbsp;</font>Male&nbsp;|&nbsp;<font color="#20B2AA">Nationality:&nbsp;</font>China</p>
+<p><font color="#20B2AA">Gender:&nbsp;</font>Male&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<font color="#20B2AA">Nationality:&nbsp;</font>China</p>
 
-<font color="#20B2AA">Date of birth:&nbsp;</font>Jan 20th,&nbsp;1995  
+<p><font color="#20B2AA">Date of birth:&nbsp;</font>Jan 20th,&nbsp;1995</p>
 
-<font color="#20B2AA" style="float:left;">Gender: </font>Male | <font color="#20B2AA" style="float:left;">Nationality: </font>China  
- 
-<font color="#20B2AA" style="float:left;">Date of birth: </font>Jan 20th, 1995  
-
-<font color="#20B2AA" style="float:left;">Email: </font>yangye@ict.ac.cn 
+<p><font color="#20B2AA">Email: </font>yangye@ict.ac.cn</p>
 
 ### **EDUCATION**
+---
 
-09/2016 - Present Ph.D. student in Computer Network Institute of Computing Technology (ICT), Chinese Academy of Sciences, China  
+<p>**09/2016 - Present**&emsp;**Ph.D. student in Computer Network**&emsp;<font color="#20B2AA">Institute of Computing Technology (ICT), Chinese Academy of Sciences, China</font></p>
+
 09/2012 – 06/2016 B.S. in Computer Science and Technology Hunan University (HNU), China
 
 
 ### **PERSONAL SKILLS**
-
+---
 Professional Abilities
 
 Understanding of network architecture
@@ -40,13 +38,13 @@ CET6
 Extensive reading of English materials (papers, standards, datasheets)
 
 ### **RESEARCH INTERESTS**
-
+---
 The architecture of future internet, e.g. SDN, NFV.
 High performance packet processing
 Design and implementation of network system under the guidance of AI
 
 ### **PROJECT EXPERIENCE**
-
+---
 01/2018 – 10/2018 Ph.D, ICT Vswitch security isolation mechanism
 	Design and implement two secure virtualized network I/O architectures based on vhost-user
 	Funded by Alibaba AIR project

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Resume
 permalink: /resume/
 ---
@@ -8,19 +8,20 @@ permalink: /resume/
 
 <img class="profile-picture" src="sherlock.jpg">
 
-Ye Yang
+**Ye Yang**
 
-Email yangye@ict.ac.cn
-Gender Male | Nationality China
-Date of birth Jan 20th, 1995
+Email yangye@ict.ac.cn  
+Gender Male | Nationality China  
+Date of birth Jan 20th, 1995  
 
 
-### EDUCATION
-09/2016 - Present Ph.D. student in Computer Network Institute of Computing Technology (ICT), Chinese Academy of Sciences, China
+### **EDUCATION**
+
+09/2016 - Present Ph.D. student in Computer Network Institute of Computing Technology (ICT), Chinese Academy of Sciences, China  
 09/2012 – 06/2016 B.S. in Computer Science and Technology Hunan University (HNU), China
 
 
-### PERSONAL SKILLS
+### **PERSONAL SKILLS**
 
 Professional Abilities
 
@@ -33,13 +34,13 @@ English Skills
 CET6
 Extensive reading of English materials (papers, standards, datasheets)
 
-### RESEARCH INTERESTS
+### **RESEARCH INTERESTS**
 
 The architecture of future internet, e.g. SDN, NFV.
 High performance packet processing
 Design and implementation of network system under the guidance of AI
 
-### PROJECT EXPERIENCE
+### **PROJECT EXPERIENCE**
 
 01/2018 – 10/2018 Ph.D, ICT Vswitch security isolation mechanism
 	Design and implement two secure virtualized network I/O architectures based on vhost-user

@@ -38,14 +38,15 @@ permalink: /resume/
 
 ### **RESEARCH DIRECTION**
 
-* The architecture of future internet, e.g. SDN, NFV.
+* Virtualization network
 * High performance packet processing
-* Design and implementation of network system under the guidance of AI
+* The architecture of future internet, e.g. SDN, NFV.
+* Design and implementation of network systems
 
 ### **PROJECT EXPERIENCE**
 
 * 01/2018–10/2018&emsp;Ph.D.&emsp;ICT&emsp;**Vswitch security isolation mechanism**; Design and implement two secure virtualized network I/O architectures based on vhost-user, source code will be opensourced in future; *This project is funded by Alibaba AIR project*
-* 10/2016–6/2017&emsp;Ph.D.&emsp;ICT&emsp;**CDN cache replacement strategy**; Cooperative paper
+* 10/2016–06/2017&emsp;Ph.D.&emsp;ICT&emsp;**CDN cache replacement strategy**; Cooperative paper
 * 09/2016–03/2017&emsp;Ph.D.&emsp;ICT&emsp;**A performance measurement tool for packet processing**; *This project is funded by HUAWEI*
 * 12/2015–06/2016&emsp;B.S.&emsp;HNU&emsp;**Transfer Mega-KV from GPU to Xeon Phi architecture**
 

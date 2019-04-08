@@ -19,9 +19,8 @@ permalink: /resume/
 
 &nbsp;|&nbsp;|&nbsp;
 -|-|-
-09/2016 - Present | Ph.D. student in Computer Network | Institute of Computing Technology (ICT), Chinese Academy of Sciences, China
-
-09/2012 – 06/2016 | B.S. in Computer Science and Technology | Hunan University (HNU), China
+09/2016-Present | Ph.D. student in Computer Network | Institute of Computing Technology (ICT), Chinese Academy of Sciences, China
+09/2012–06/2016 | B.S. in Computer Science and Technology | Hunan University (HNU), China
 
 
 ### **PERSONAL SKILLS**
@@ -31,7 +30,7 @@ permalink: /resume/
 * Understanding of network architecture  
 * Familiar with Linux kernel environment software development  
 * Excellent understanding of data structure and algorithm  
-* Production experience with DPDK, OVS, SDN controllers, QEMU  
+* Production experience with **DPDK, OVS, SDN controllers, QEMU**  
 
 **English Skills**  
 * CET6

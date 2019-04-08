@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: resume
 title: Resume
 permalink: /resume/
 ---

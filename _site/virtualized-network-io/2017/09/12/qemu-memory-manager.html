@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" />
+        <title>qemu内存管理以及vhost-user的协商机制下的前后端内存布局 - Ye Yang</title>
+        <meta name="author" content="Ye Yang" />
+        <meta name="description" content="qemu内存管理以及vhost-user的协商机制下的前后端内存布局" />
+        <meta name="keywords" content="qemu内存管理以及vhost-user的协商机制下的前后端内存布局, Ye Yang, virtualized-network-IO" />
+
+        <meta content="0" property="fb:app_id">
+        <meta content="Ye Yang" property="og:site_name">
+        
+          <meta content="qemu内存管理以及vhost-user的协商机制下的前后端内存布局" property="og:title">
+        
+        
+          <meta content="article" property="og:type">
+        
+        
+          <meta content="My Personal Blog" property="og:description">
+        
+        
+          <meta content="http://localhost:4000/virtualized-network-io/2017/09/12/qemu-memory-manager.html" property="og:url">
+        
+        
+          <meta content="2017-09-12T18:19:39+08:00" property="article:published_time">
+          <meta content="http://localhost:4000/about/" property="article:author">
+        
+        
+          <meta content="http://localhost:4000/static/img/logo-high-resolution.png" property="og:image">
+        
+        
+          
+          <meta content="virtualized-network-IO" property="article:section">
+          
+        
+        
+          
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@\#">
+        <meta name="twitter:creator" content="@\#">
+        
+          <meta name="twitter:title" content="qemu内存管理以及vhost-user的协商机制下的前后端内存布局">
+        
+        
+          <meta name="twitter:url" content="http://localhost:4000/virtualized-network-io/2017/09/12/qemu-memory-manager.html">
+        
+        
+          <meta name="twitter:description" content="My Personal Blog">
+        
+        
+
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      <script type="text/javascript">window.baseurl = 'http://localhost:4000';</script>
+      
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <!-- FontAwesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/74dfc6cf47.css">
+
+        <!-- Core BootStrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Material Design CSS -->
+        <link rel="stylesheet" href="https://ictyangye.github.io/static/css/bootstrap-material-design.min.css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="https://ictyangye.github.io/static/css/syntax.css">
+
+        <!-- Custom CSS -->        
+        <link rel="stylesheet" href="https://ictyangye.github.io/static/css/thickbox.css">
+        <link rel="stylesheet" href="https://ictyangye.github.io/static/css/main.css">
+        <link rel="stylesheet" href="https://ictyangye.github.io/static/css/projects.css">
+
+        <script type="text/javascript">
+          //loadingImage is relative to project dir
+          var tb_pathToImage = "https://ictyangye.github.io/static/img/loadingAnimation.gif";
+        </script>
+
+  </head>
+
+  <body class="home overflow-hidden">
+    <div class="header-panel shadow-z-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="row-picture">
+              <img id="about" class="logo-img" src="/static/img/avatar.png" height="75px" width="75px">
+            </div>
+            <div class="row-details">
+              <h4 class="list-group-item-heading">Ye Yang</h4>
+              <p class="list-group-item-text">PHD student in ICT of CAS</p>
+              <div class="social-icons">
+	
+        <a class="icon" target="_blank" href=""><i class="fa fa-qq"></i></a>
+    
+        <a class="icon" target="_blank" href=""><i class="fa fa-weixin"></i></a>
+    
+        <a class="icon" target="_blank" href=""><i class="fa fa-skype"></i></a>
+    
+        <a class="icon" target="_blank" href=""><i class="fa fa-envelope"></i></a>
+    
+</div>
+
+            </div>
+            <div class="navbar-header pull-right">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-2x fa-bars"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+          <div class="row">
+            <h2 class="blog-title-pro col-md-6 col-sm-12 col-xs-12 ">qemu内存管理以及vhost-user的协商机制下的前后端内存布局</h2>
+            
+            <div class="col-md-6 col-sm-12 col-xs-12 searchcontrol" id="js-search">
+              <input class="form-control" type="text" id="js-search__input" placeholder="Search">
+              <ul class="search__results" id="js-search__results"></ul>
+            </div>
+            
+            </div>
+            <p class="info">
+              
+                <span class="time">12 Sep 2017</span>
+              
+              
+                <span class="categories">
+                  &raquo; 
+                  
+                    <a href="https://ictyangye.github.io/category/virtualized-network-IO">virtualized-network-IO</a>
+                    
+                  
+                </span>
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container main outer">
+      <div class="row">
+        <div class="col-md-3 col-xs-12">
+              <nav class="menu">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="list-separator nav navbar-nav well well-primary post">
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item qemu-memory-manager.html"><a href="https://ictyangye.github.io/" target="_self"><i class="fa fa-home"></i> Home</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  qemu-memory-manager.html"><a href="https://ictyangye.github.io/#" target="_self"><i class="fa fa-graduation-cap"></i> Resume</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  qemu-memory-manager.html"><a href="https://ictyangye.github.io/#" target="_self"><i class="fa fa-github"></i> Github</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  qemu-memory-manager.html"><a href="https://ictyangye.github.io/about/" target="_self"><i class="fa fa-comments"></i> About</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  qemu-memory-manager.html"><a href="https://ictyangye.github.io/feed.xml" target="_blank"><i class="fa fa-feed"></i> XML Feed</a></li>
+
+</ul>
+
+    </div>
+    </nav>
+
+        </div>
+        <div class="col-md-9 col-xs-12 full">
+          <div class="post-content well">
+<article class="content">
+    <div class="post"><p><strong>概括来说，qemu和KVM在内存管理上的关系就是：在虚拟机启动时，qemu在qemu进程地址空间申请内存，即内存的申请是在用户空间完成的。通过kvm提供的API，把地址信息注册到KVM中，这样KVM中维护有虚拟机相关的slot，这些slot构成了一个完整的虚拟机物理地址空间。slot中记录了其对应的HVA，页面数、起始GPA等，利用它可以把一个GPA转化成HVA，这正是KVM维护EPT的技术核心。整个内存虚拟化可以分为两部分：qemu部分和kvm部分。qemu完成内存的申请，kvm实现内存的管理。</strong></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/5971286-1e105a126e1431ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qemu与KVM内存管理的分工.png" /></p>
+
+<ul>
+  <li>qemu中地址空间分两部分，两个全局变量system_memory和system_IO，其中system_memory是所有memory_region的父object，他们只负责管理内存。</li>
+  <li>在KVM中，也有两个全局变量address_space_memory和address_space_memory_IO，与qemu中的memory_region对应，只有将HVA和GPA的对应关系注册到KVM模块的memslot，才可以生效成为EPT。</li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/5971286-9b28de7bdb6207a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="system_memory和address_space_memory等的关系.png" /></p>
+
+<p>在qemu 2.9的前端virtio和dpdk17.05的后端vhost-user构成的虚拟队列中，会率先通过socket建立连接，将qemu中virtio的内存布局传给vhost，vhost收到包（该消息机制有自己的协议，暂称为msg）后，分析其中的信息，这里面通信包含一套自己写的协议。包含以下内容，均是在刚建立连接时候传递的：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>static const char *vhost_message_str[VHOST_USER_MAX] = {
+    [VHOST_USER_NONE] = "VHOST_USER_NONE",
+    [VHOST_USER_GET_FEATURES] = "VHOST_USER_GET_FEATURES",
+    [VHOST_USER_SET_FEATURES] = "VHOST_USER_SET_FEATURES",
+    [VHOST_USER_SET_OWNER] = "VHOST_USER_SET_OWNER",
+    [VHOST_USER_RESET_OWNER] = "VHOST_USER_RESET_OWNER",
+    [VHOST_USER_SET_MEM_TABLE] = "VHOST_USER_SET_MEM_TABLE",
+    [VHOST_USER_SET_LOG_BASE] = "VHOST_USER_SET_LOG_BASE",
+    [VHOST_USER_SET_LOG_FD] = "VHOST_USER_SET_LOG_FD",
+    [VHOST_USER_SET_VRING_NUM] = "VHOST_USER_SET_VRING_NUM",
+    [VHOST_USER_SET_VRING_ADDR] = "VHOST_USER_SET_VRING_ADDR",
+    [VHOST_USER_SET_VRING_BASE] = "VHOST_USER_SET_VRING_BASE",
+    [VHOST_USER_GET_VRING_BASE] = "VHOST_USER_GET_VRING_BASE",
+    [VHOST_USER_SET_VRING_KICK] = "VHOST_USER_SET_VRING_KICK",
+    [VHOST_USER_SET_VRING_CALL] = "VHOST_USER_SET_VRING_CALL",
+    [VHOST_USER_SET_VRING_ERR]  = "VHOST_USER_SET_VRING_ERR",
+    [VHOST_USER_GET_PROTOCOL_FEATURES]  = "VHOST_USER_GET_PROTOCOL_FEATURES",
+    [VHOST_USER_SET_PROTOCOL_FEATURES]  = "VHOST_USER_SET_PROTOCOL_FEATURES",
+    [VHOST_USER_GET_QUEUE_NUM]  = "VHOST_USER_GET_QUEUE_NUM",
+    [VHOST_USER_SET_VRING_ENABLE]  = "VHOST_USER_SET_VRING_ENABLE",
+    [VHOST_USER_SEND_RARP]  = "VHOST_USER_SEND_RARP",
+    [VHOST_USER_NET_SET_MTU]  = "VHOST_USER_NET_SET_MTU",
+};
+</code></pre>
+</div>
+<p>其中我们最关心的就是vhost_user_set_mem_table:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>static int
+vhost_user_set_mem_table(struct virtio_net *dev, struct VhostUserMsg *pmsg)
+{
+	...
+	for (i = 0; i &lt; memory.nregions; i++) {
+		fd  = pmsg-&gt;fds[i];
+		reg = &amp;dev-&gt;mem-&gt;regions[i];
+
+		reg-&gt;guest_phys_addr = memory.regions[i].guest_phys_addr;
+		reg-&gt;guest_user_addr = memory.regions[i].userspace_addr;
+		reg-&gt;size            = memory.regions[i].memory_size;
+		reg-&gt;fd              = fd;
+
+		mmap_offset = memory.regions[i].mmap_offset;
+		mmap_size   = reg-&gt;size + mmap_offset;
+
+		/* mmap() without flag of MAP_ANONYMOUS, should be called
+		 * with length argument aligned with hugepagesz at older
+		 * longterm version Linux, like 2.6.32 and 3.2.72, or
+		 * mmap() will fail with EINVAL.
+		 *
+		 * to avoid failure, make sure in caller to keep length
+		 * aligned.
+		 */
+		alignment = get_blk_size(fd);
+		if (alignment == (uint64_t)-1) {
+			RTE_LOG(ERR, VHOST_CONFIG,
+				"couldn't get hugepage size through fstat\n");
+			goto err_mmap;
+		}
+		mmap_size = RTE_ALIGN_CEIL(mmap_size, alignment);
+
+		mmap_addr = mmap(NULL, mmap_size, PROT_READ | PROT_WRITE,
+				 MAP_SHARED | MAP_POPULATE, fd, 0);
+        //对每个region调用mmap映射共享内存
+		if (mmap_addr == MAP_FAILED) {
+			RTE_LOG(ERR, VHOST_CONFIG,
+				"mmap region %u failed.\n", i);
+			goto err_mmap;
+		}
+
+	...
+	return 0;
+
+err_mmap:
+	free_mem_region(dev);
+	rte_free(dev-&gt;mem);
+	dev-&gt;mem = NULL;
+	return -1;
+}
+</code></pre>
+</div>
+<p>另外，我们在实际运行系统的过程中发现，qemu的内存布局和vhost端的内存布局，虽是通过共享内存建立的，但是既不是一整块内存映射，也不是通过零碎的region一小块一小块的映射。它们的内存布局如下：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/5971286-190ec713c4c44f1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="virtio前后端的内存布局.png" />
+在vhost这边只有两块region，而且像是将前端的内存region做了一个聚合得到的。回归代码，发现消息传递之前，传递的并非是memory_region变量，而是memory_region_section，在qemu的vhost_set_memory函数中，有这样一个操作：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>if (add) {
+        /* Add given mapping, merging adjacent regions if any */
+        vhost_dev_assign_memory(dev, start_addr, size, (uintptr_t)ram);
+    } else {
+        /* Remove old mapping for this memory, if any. */
+        vhost_dev_unassign_memory(dev, start_addr, size);
+    }
+</code></pre>
+</div>
+<p>将毗邻的memory_region合并了，这样就解释的通了。因为memory_region是一个树状结构，且有包含关系在里面，所以如果一个个传递，vhost里面用for循环进行映射到自己地址空间，效率低下，而且大多数内存vhost用不到，没有必要这么细分。</p>
+</div>
+    <hr />
+    <div class="share-page">
+    Share this on &rarr;
+ <a href="https://twitter.com/share" class="twitter-share-button" data-via="\#">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Google + -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Facebook -->
+<div class="fb-share-button" data-href="http://localhost:4000/virtualized-network-io/2017/09/12/qemu-memory-manager.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</article>
+<hr />
+
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                
+                <li class="relatedPost">
+                    <a href="http://localhost:4000/virtualized-network-io/2019/04/02/zero-copy.html">虚拟化网络中的零拷贝</a>
+                    
+                        <small>(Categories: <a href="/category/virtualized-network-IO">virtualized-network-IO</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="http://localhost:4000/virtualized-network-io/2019/04/01/vhost-user.html">Vhost-user详解</a>
+                    
+                        <small>(Categories: <a href="/category/virtualized-network-IO">virtualized-network-IO</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="http://localhost:4000/virtualized-network-io/2019/03/31/virtualized-IO.html">浅谈网络I/O全虚拟化、半虚拟化和I/O透传</a>
+                    
+                        <small>(Categories: <a href="/category/virtualized-network-IO">virtualized-network-IO</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="http://localhost:4000/virtualized-network-io/2017/09/12/vhost-user-installer.html">DPDK+OVS+QEMU搭建vhost-user实验环境</a>
+                    
+                        <small>(Categories: <a href="/category/virtualized-network-IO">virtualized-network-IO</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+
+    </ul>
+    </div>
+
+
+<div class="PageNavigation">
+  
+    <a class="prev pull-left" href="http://localhost:4000/virtualized-network-io/2017/09/12/vhost-user-installer.html">&laquo; DPDK+OVS+QEMU搭建vhost-user实验环境</a>
+  
+  
+    <a class="next pull-right" href="http://localhost:4000/dpdk/2017/09/22/DPDK-l2fwd.html">DPDK简单example的阅读——l2fwd &raquo;</a>
+  
+</div>
+
+
+<div class="disqus-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+
+        var disqus_shortname = "aboutashu";
+        var disqus_identifier = "http://localhost:4000_qemu内存管理以及vhost-user的协商机制下的前后端内存布局";
+        var disqus_title = "qemu内存管理以及vhost-user的协商机制下的前后端内存布局";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    /* ]]> */
+    </script>
+</div>
+</div>
+          <div class="row">
+            <div class="col-md-12 col-xs-12 footer">
+              <footer>
+  © 2016 Your Name <a href="#">Privacy link</a> - Powered by Jekyll.
+</footer>
+<div align="center">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-0000000000000000"
+    data-ad-slot="0000000000"
+    data-ad-format="auto"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+            </div>
+          </div>
+        </div> <!-- end /.col-md-9 -->
+      </div> <!-- end /.row -->
+    </div>
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script src="https://ictyangye.github.io/static/js/super-search.js"></script>
+
+<script src="https://ictyangye.github.io/static/js/thickbox-compressed.js"></script>
+<script src="https://ictyangye.github.io/static/js/material.min.js"></script>
+<script src="https://ictyangye.github.io/static/js/main.js"></script>
+<script src="https://ictyangye.github.io/static/js/projects.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72862926-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

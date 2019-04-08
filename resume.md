@@ -5,7 +5,7 @@ permalink: /resume/
 ---
 
 ### **PERSONAL INFORMATION**
-<img class="profile-picture" src="static/img/me.jpg">
+<img class="profile-picture" src="/static/img/me.jpg">
 
 **Ye Yang**
 

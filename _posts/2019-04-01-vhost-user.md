@@ -74,7 +74,7 @@ static int vhost_user_set_mem_table(struct virtio_net *dev, struct VhostUserMsg 
    ...
 }
 ```
-它使用的linux库函数```mmap()```来映射VM内存，详见linux编程手册http://man7.org/linux/man-pages/man2/mmap.2.html。注意到在映射内存之前它还干了一件事，设置内存对齐，这是因为mmap函数映射内存的基本单位是一个页，也就是说起始地址和大小都必须是页大小是整数倍，在大页面环境下，就是2MB或者1GB。只有对齐以后才能保证映射共享内存不出错，以及后续访存行为不会越界。
+它使用的linux库函数```mmap()```来映射VM内存，详见linux编程手册<http://man7.org/linux/man-pages/man2/mmap.2.html>。注意到在映射内存之前它还干了一件事，设置内存对齐，这是因为mmap函数映射内存的基本单位是一个页，也就是说起始地址和大小都必须是页大小是整数倍，在大页面环境下，就是2MB或者1GB。只有对齐以后才能保证映射共享内存不出错，以及后续访存行为不会越界。
 
 后面三行是保存地址转换关系的信息。这里涉及到几种地址转换，在vhost-user中最复杂的就是地址转换。**从QEMU进程角度看虚拟机内存有两种地址：GPA（Guest Physical Address）和QVA（QEMU Virtual Address）；从OVS进程看虚拟机内存也有两种地址GPA（Guest Physical Address）和VVA（vSwitch Virtual Address）**
 

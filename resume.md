@@ -17,14 +17,16 @@ permalink: /resume/
 
 ### **EDUCATION**
 
-**09/2016 - Present**&emsp;**Ph.D. student in Computer Network**&emsp;<font color="#20B2AA">Institute of Computing Technology (ICT), Chinese Academy of Sciences, China</font>
+&nbsp;|&nbsp;|&nbsp;
+-|-|-
+09/2016 - Present | Ph.D. student in Computer Network | Institute of Computing Technology (ICT), Chinese Academy of Sciences, China
 
-09/2012 – 06/2016 B.S. in Computer Science and Technology Hunan University (HNU), China
+09/2012 – 06/2016 | B.S. in Computer Science and Technology | Hunan University (HNU), China
 
 
 ### **PERSONAL SKILLS**
 
-**<font color="#20B2AA">Professional Abilities</font>**  
+**Professional Abilities**  
 
 * Understanding of network architecture  
 * Familiar with Linux kernel environment software development  
@@ -36,10 +38,9 @@ permalink: /resume/
 * Extensive reading of English materials (papers, standards, datasheets)
 
 ### **RESEARCH INTERESTS**
----
-The architecture of future internet, e.g. SDN, NFV.
-High performance packet processing
-Design and implementation of network system under the guidance of AI
+* The architecture of future internet, e.g. SDN, NFV.
+* High performance packet processing
+* Design and implementation of network system under the guidance of AI
 
 ### **PROJECT EXPERIENCE**
 ---

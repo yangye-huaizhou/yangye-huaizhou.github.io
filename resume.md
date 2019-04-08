@@ -4,13 +4,13 @@ title: Resume
 permalink: /resume/
 ---
 
-### PERSONAL INFORMATION
+### **PERSONAL INFORMATION**
 
 <img class="profile-picture" src="sherlock.jpg">
 
 **Ye Yang**
 
-Email yangye@ict.ac.cn  
+<font color="#20B2AA">Email</font><br/> yangye@ict.ac.cn  
 Gender Male | Nationality China  
 Date of birth Jan 20th, 1995  
 

@@ -36,7 +36,7 @@ permalink: /resume/
 * CET6
 * Extensive reading of English materials (papers, standards, datasheets)
 
-### **RESEARCH INTERESTS**
+### **RESEARCH DIRECTION**
 
 * The architecture of future internet, e.g. SDN, NFV.
 * High performance packet processing

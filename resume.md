@@ -19,7 +19,7 @@ permalink: /resume/
 ### **EDUCATION**
 ---
 
-<p>**09/2016 - Present**&emsp;**Ph.D. student in Computer Network**&emsp;<font color="#20B2AA">Institute of Computing Technology (ICT), Chinese Academy of Sciences, China</font></p>
+**09/2016 - Present**&emsp;**Ph.D. student in Computer Network**&emsp;<font color="#20B2AA">Institute of Computing Technology (ICT), Chinese Academy of Sciences, China</font>
 
 09/2012 – 06/2016 B.S. in Computer Science and Technology Hunan University (HNU), China
 

@@ -64,18 +64,6 @@ Year | Award | Category
 2014 | Satellite | Won Best Actor miniseries or television film
 
 
-<table><tbody>
-    <tr>
-        <th>Year</th><th>Award</th><th>Category</th>
-    </tr>
-    <tr>
-        <td><font color="Hotpink">2014</font></td><td><font color="Hotpink">Emmy</font></td><td bgcolor="Hotpink">Won Outstanding Lead Actor in a miniseries or a movie</td>
-    </tr>
-    <tr>
-        <td><font color="Pink">2015</font></td><td><font color="pink">BAFTA</font></td><td bgcolor="Pink">Nominated for Best Leading Actor for Sherlock</td>
-    </tr>
-</table>
-
 Here is a horizontal rule
 
 ---

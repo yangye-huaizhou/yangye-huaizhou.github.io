@@ -5,7 +5,6 @@ permalink: /resume/
 ---
 
 ### **PERSONAL INFORMATION**
----
 <img class="profile-picture" src="sherlock.jpg">
 
 **Ye Yang**
@@ -17,7 +16,6 @@ permalink: /resume/
 <p><font color="#20B2AA">Email: </font>yangye@ict.ac.cn</p>
 
 ### **EDUCATION**
----
 
 **09/2016 - Present**&emsp;**Ph.D. student in Computer Network**&emsp;<font color="#20B2AA">Institute of Computing Technology (ICT), Chinese Academy of Sciences, China</font>
 
@@ -25,17 +23,17 @@ permalink: /resume/
 
 
 ### **PERSONAL SKILLS**
----
-Professional Abilities
 
-Understanding of network architecture
-Familiar with Linux kernel environment software development
-Excellent understanding of data structure and algorithm
-Production experience with DPDK, OVS, SDN controllers, QEMU
+**<font color="#20B2AA">Professional Abilities</font>**  
 
-English Skills
-CET6
-Extensive reading of English materials (papers, standards, datasheets)
+* Understanding of network architecture  
+* Familiar with Linux kernel environment software development  
+* Excellent understanding of data structure and algorithm  
+* Production experience with DPDK, OVS, SDN controllers, QEMU  
+
+**English Skills**  
+* CET6
+* Extensive reading of English materials (papers, standards, datasheets)
 
 ### **RESEARCH INTERESTS**
 ---

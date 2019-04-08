@@ -29,7 +29,7 @@ permalink: /resume/
 
 * Understanding of network architecture  
 * Familiar with Linux kernel environment software development  
-* Excellent understanding of data structure and algorithm  
+* Excellent understanding of data structure, algorithm and operation system  
 * Production experience with ***DPDK, OVS, SDN controllers, QEMU***  
 
 **English Skills**  
@@ -45,15 +45,15 @@ permalink: /resume/
 ### **PROJECT EXPERIENCE**
 
 * 01/2018–10/2018&emsp;Ph.D.&emsp;ICT&emsp;Vswitch security isolation mechanism  
-		Design and implement two secure virtualized network I/O architectures based on vhost-user(opensource in future)
-		*Funded by Alibaba AIR project*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Design and implement two secure virtualized network I/O architectures based on vhost-user(opensource in future)  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Funded by Alibaba AIR project*
 * 10/2016–6/2017&emsp;Ph.D.&emsp;ICT&emsp;CDN cache replacement strategy  
-		Cooperative paper
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Cooperative paper
 * 09/2016–03/2017&emsp;Ph.D.&emsp;ICT&emsp;A performance measurement tool for packet processing  
-		*Funded by HUAWEI*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*Funded by HUAWEI*
 * 12/2015–06/2016&emsp;B.S.&emsp;HNU&emsp;Transfer Mega-KV from GPU to Xeon Phi architecture
 
 ### **PATENTS AND PAPERS**
 
-201910007074.0
-201910006957.X
+* 201910007074.0  
+* 201910006957.X

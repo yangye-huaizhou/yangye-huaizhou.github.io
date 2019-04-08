@@ -18,7 +18,7 @@ permalink: /resume/
 ### **EDUCATION**
 
 &nbsp;|&nbsp;|&nbsp;
--|-|-
+-----|-------|---------
 09/2016-Present | Ph.D. student in Computer Network | Institute of Computing Technology (ICT), Chinese Academy of Sciences, China
 09/2012–06/2016 | B.S. in Computer Science and Technology | Hunan University (HNU), China
 

@@ -38,10 +38,11 @@ permalink: /resume/
 
 ### **RESEARCH DIRECTION**
 
-* Virtualization network
+* Virtualized network
+* Design and implementation of network based systems
 * High performance packet processing
 * The architecture of future internet, e.g. SDN, NFV.
-* Design and implementation of network systems
+* Flow/packet schedule
 
 ### **PROJECT EXPERIENCE**
 

@@ -73,7 +73,9 @@ mount -t hugetlbfs -o pagesize=1G none /dev/hugepages
 mkdir -p /usr/local/etc/openvswitch #刚装完OVS需要新创建这个目录，以后用的时候不用
 ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema  #利用ovsdb-tool创建ovsdb数据库
 
-ovsdb-server --remote=punix:/usr/local/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --pidfile --detachovs-vsctl --no-wait set Open_vSwitch . other_config:dpdk-init=true  #启动ovsdb进程
+ovsdb-server --remote=punix:/usr/local/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --pidfile --detach
+
+ovs-vsctl --no-wait set Open_vSwitch . other_config:dpdk-init=true  #启动ovsdb进程
 
 ovs-vswitchd --pidfile --detach   #启动ovs-vswitch进程
 ```

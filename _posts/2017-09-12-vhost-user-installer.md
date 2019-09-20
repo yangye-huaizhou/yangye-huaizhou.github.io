@@ -56,7 +56,7 @@ make
 
 make install
 ```
-安装完成之后，就可以启动ovs了，需要DPDK实现绑定大页和网卡，以后每次启动ovs只需要最下面两个命令启动ovs最重要两个进程即可：
+安装完成之后，就可以启动ovs了，需要DPDK实现绑定大页和网卡，以后每次启动ovs只需要最下面命令启动ovs最重要两个进程即可：
 
  
 ```
@@ -66,16 +66,20 @@ chmod a+x /dev/vfio
 
 chmod 0666 /dev/vfio/*
 
-/home/yangye/ovs-dpdk/dpdk-stable-17.05.1/usertools/dpdk-devbind.py --bind=vfio-pci eth4
+dpdk-stable-17.05.1/usertools/dpdk-devbind.py --bind=vfio-pci eth4
 
 mount -t hugetlbfs -o pagesize=1G none /dev/hugepages
 
-mkdir -p /usr/local/etc/openvswitch #刚装完OVS需要新创建这个目录，以后用的时候不用
-ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema  #利用ovsdb-tool创建ovsdb数据库
+mkdir -p /usr/local/etc/openvswitch
+mkdir -p /usr/local/var/log/openvswitch
+mkdir -p /usr/local/var/run/openvswitch
+#刚装完OVS需要新创建这几个目录，不然会提示找不到文件，以后用的时候不用
 
-ovsdb-server --remote=punix:/usr/local/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --pidfile --detach
+ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema  #利用ovsdb-tool创建ovsdb数据库，第一次需要
 
-ovs-vsctl --no-wait set Open_vSwitch . other_config:dpdk-init=true  #启动ovsdb进程
+ovsdb-server --remote=punix:/usr/local/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --pidfile --detach  #启动ovsdb进程
+
+ovs-vsctl --no-wait set Open_vSwitch . other_config:dpdk-init=true  #设置OVS里的一些配置
 
 ovs-vswitchd --pidfile --detach   #启动ovs-vswitch进程
 ```

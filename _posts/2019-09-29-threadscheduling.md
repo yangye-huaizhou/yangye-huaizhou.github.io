@@ -7,7 +7,8 @@ categories: operation-system
 
 进程调度是现代操作系统一个重要的组成部分，理论上它会为进程提供多种不同的运行状态，以及在CPU核上、核间调度的策略。因为项目实践需要，我们需要**在一个CPU核上用自己的调度器来运行多个进程，运行策略由用户态程序决定，在特定的时候唤醒特定的进程**。这次就来分享一下进程调度的一些基本概念和我们的这种纯用户空间进程调度的实现。
 
-#1.进程状态
+# 1.进程状态
+
 在linux操作系统，用```top```命令我们就能看到有许许多多正在运行的进程：
 ![top命令输出.png](https://upload-images.jianshu.io/upload_images/5971286-3d0d9cee2e6f9fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 *这些属性中与进程调度有关的有NI、S，他们分别对应着进程的优先级和运行状态。*
@@ -28,7 +29,7 @@ categories: operation-system
 
 进程的这些运行状态是为了让众多进程在有限的CPU核上跑起来而提出的。在现代多核处理器上，同一时间CPU只能被一个进程使用，也就意味着如何，实际上操作系统做了一些调度策略，比方说每个进程运行一段时间进入sleep状态给其他进程使用CPU的机会。只要这个周期够短，就能让用户感觉不到自己是在“运行-睡眠-运行-睡眠”的，这又被称为*“时间多路复用”*。同时为了保证同一个进程不会一直占据某个CPU，linux默认也是会将进程缓慢地在核间调度的。
 
-#2.调度
+# 2.调度
 
 在linux操作系统中调度策略有三种——**SCHED_OTHER**、**SCHED_FIFO**、**SCHED_RR**，按照传统分法，它们分成两大类：
 * **普通进程调度**
@@ -64,7 +65,7 @@ chrt -p $PID         # 再次查看调度策略
       pid $PID's current scheduling priority: 10
 ```
 
-#3.用户空间实现唤醒式调度
+# 3.用户空间实现唤醒式调度
 
 重新回到前面，我们的需求：***1）多个worker进程在一个核上工作；2）有一个单独的进程做中央调度进程，不定期去唤醒对应的worker进程；3）每个worker进程执行完自己的一轮任务后主动放弃CPU进入sleeping状态，能且仅能被调度进程唤醒；4）worker进程处于运行状态时不可被别的进程打断抢占。***
 
@@ -94,11 +95,13 @@ void *work(void *arg)
     }
 }
 ```
+
 至于调度进程与worker进程如何通信，可以使用信号、套接字、管道、消息队列、共享内存等一系列进程间通信的方式。
 
 下面附上一个demo，这个例子使用的信号来做进程间通信，使用了```SIGUSR1```信号，直接使用终端命令```kill -s 10 $PID```也可以实现调度器功能，每发一个信号执行一次loop：
 
 worker.c创建一个从线程，运行work函数内容
+
 ```
 //worker.c
 #include<stdio.h>
@@ -197,10 +200,16 @@ int main(int argc,char** argv)
     return 0;
 }
 ```
+
 编译```gcc schedule.c -o schedule```，运行```./schedule $PID```($PID为worker进程的进程号)。
+
 效果是每运行一次schedule就会看到输出来一层*号。
+
 ![运行效果.png](https://upload-images.jianshu.io/upload_images/5971286-ad427ef3ea937ab9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-*引用：
+
+*引用：*
+
 [1] Linux Process States and Signals, https://medium.com/@cloudchef/linux-process-states-and-signals-a967d18fab64
-[2] 《深入理解LINUX内核》*
+
+[2] 《深入理解LINUX内核》

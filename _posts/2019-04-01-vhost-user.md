@@ -8,7 +8,7 @@ categories: virtualized-network-IO
 在软件实现的网络I/O半虚拟化中，vhost-user在性能、灵活性和兼容性等方面达到了近乎完美的权衡。虽然它的提出已经过了四年多，也已经有了越来越多的新特性加入，但是万变不离其宗，那么今天就从整个vhost-user数据通路的建立过程，以及数据包传输流程等方面详细介绍下vhost-user架构，本文基于DPDK 17.11分析。
 
 vhost-user的最好实现在DPDK的vhost库里，该库包含了完整的virtio后端逻辑，可以直接在虚拟交换机中抽象成一个端口使用。在最主流的软件虚拟交换机OVS（openvswitch）中，就可以使用DPDK库。
-![vhost-user典型部署场景.png](picture/vhostuser1.png)
+![vhost-user典型部署场景.png](/assets/picture/vhostuser1.png)
 vhost-user最典型的应用场景如图所示，OVS为每个虚拟机创建一个vhost端口，实现virtio后端驱动逻辑，包括响应虚拟机收发数据包的请求，处理数据包拷贝等。每个VM实际上运行在一个独立的QEMU进程内，QEMU是负责对虚拟机设备模拟的，它已经整合了KVM通信模块，因此QEMU进程已经成为VM的主进程，其中包含vcpu等线程。QEMU启动的命令行参数可以选择网卡设备类型为virtio，它就会为每个VM虚拟出virtio设备，结合VM中使用的virtio驱动，构成了virtio的前端。
 
 # 1.建立连接
@@ -44,7 +44,7 @@ static const char *vhost_message_str[VHOST_USER_MAX] = {
 随着版本迭代，越来越多的feature被加进来，消息类型也越来越多，但是**控制信道最主要的功能就是：传递建立数据通路必须的数据结构；控制数据通路的开启和关闭以及重连功能；热迁移或关闭虚拟机时传递断开连接的消息。**
 
 从虚拟机启动到数据通路建立完毕，所传递的消息都会记录在OVS日志文件中，对这些消息整理过后，实际流程如下图所示：
-![vhost-user控制信道消息流.png](picture/vhostuser2.png)
+![vhost-user控制信道消息流.png](/assets/picture/vhostuser2.png)
 左边一半为一些协商特性，尤其像后端驱动与前端驱动互相都不知道对方协议版本的时候，协商这些特性是必要的。特性协商完毕，接下来就要传递建立数据通路所必须的数据结构，主要包括传递共享内存的文件描述符和内存地址的转换关系，以及virtio中虚拟队列的状态信息。下面对这些最关键的部分一一详细解读。
 
 ### 设置共享内存
@@ -81,7 +81,7 @@ static int vhost_user_set_mem_table(struct virtio_net *dev, struct VhostUserMsg 
 **GPA是virtio最重要的地址，在virtio的标准中，用来存储数据包地址的虚拟队列virtqueue里面每项都是以GPA表示的。**但是对于操作系统而言，我们在进程内访问实际使用的都是虚拟地址，物理地址已经被屏蔽，也就是说进程只有拿到了物理地址所对应的虚拟地址才能够去访存（*我们编程使用的指针都是虚拟地址*）。
 
 QEMU进程容易实现，毕竟作为VM主进程给VM预分配内存时就建立了QVA到GPA的映射关系。
-![共享内存映射关系.png](picture/vhostuser3.png)
+![共享内存映射关系.png](/assets/picture/vhostuser3.png)
 
 对于OVS进程，以上图为例，**mmap()函数返回的也是虚拟地址，是VM内存映射到OVS地址空间的起始地址（就是说我把这一块内存映射在了以mmap_addr起始的大小为1GB的空间里）。这样给OVS进程一个GPA，OVS进程可以利用地址偏移算出对应的VVA，然后实施访存。**
 
@@ -368,7 +368,7 @@ out_access_unlock:
 # 3.OVS轮询逻辑
 
 在OVS中有很多这样的vhost端口，DPDK加速的OVS已经实现绑核轮询这些端口了。因此一般会把众多的端口尽可能均匀地绑定到有限的CPU核上，一些厂商在实际的生产环境中如下图所示，甚至做到了以队列为单位来负载均衡。
-![OVS多队列负载均衡.png](picture/vhostuser4.png)
+![OVS多队列负载均衡.png](/assets/picture/vhostuser4.png)
 
 另外针对物理端口和虚拟端口的绑核也有一些优化问题，主要是为了避免读写锁，比如：把物理网卡的端口全部绑定到一个核上，软件的虚拟端口放到另一个核上，这样收发很少在一个核上碰撞等。
 

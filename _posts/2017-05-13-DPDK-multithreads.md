@@ -37,7 +37,7 @@ DPDK的一个处理器核每秒可以处理约33M个报文，大概30纳秒处�
 ### 3. lcore的注册：
 不同模块需要调用rte_eal_mp_remote_launch()，将自己的回调函数注册到config[].f中。每个核上的线程都会调用该函数来实现自己的处理函数。lcore启动过程和任务分发如下：
 
-![多核任务分发.png](http://upload-images.jianshu.io/upload_images/5971286-403dc51fb011d8ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![多核任务分发.png](picture/dpdkmulti1.png)
 
 另外，由于现网往往有流量潮汐的影响，所以为了寻求灵活的扩展能力，EAL pthread与逻辑核之间允许打破1:1的绑定关系，允许绑定一个特定的lcore ID或者lcore ID组。
 ***
@@ -113,9 +113,9 @@ eal_short_options[] =
 其中最重要的就是-c，设置核掩码，这块内容上面已经说过了，运行效果如下：
 
 
-![掩码为1111.png](http://upload-images.jianshu.io/upload_images/5971286-a7ffe5282477c183.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![掩码为1111.png](picture/dpdkmulti2.png)
 
-![掩码为1110.png](http://upload-images.jianshu.io/upload_images/5971286-755332c079a2cbfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![掩码为1110.png](picture/dpdkmulti3.png)
 
 整体代码的结构很像pthread写的多线程程序，先rte_eal_init()进行一系列很复杂的初始化工作，在官方文档上写的这些初始化工作包括：
 * 配置初始化
@@ -179,7 +179,7 @@ rte_eal_remote_launch(int (*f)(void *), void *arg, unsigned slave_id)
 }
 ```
 lcore_config中的pipe_master2slave[2]和pipe_slave2master[2]分别是主线程到从线程核从线程到主线程的管道，与linux中的管道一样，是一个大小为2的数组，数组的第一个元素为读打开，第二个元素为写打开。在这调用了linux库函数read核write，把c作为消息传递。管道的模型如下图所示：
-![管道模型](http://upload-images.jianshu.io/upload_images/5971286-76d83b8697cbc8d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![管道模型](picture/dpdkmulti4.png)
 
 这样，每个从线程通过rte_eal_remote_launch函数运行了自定义函数lcore_hello就打印出了“hello from core #”的输出。
 

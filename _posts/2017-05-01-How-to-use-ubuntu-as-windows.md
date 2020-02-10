@@ -10,7 +10,7 @@ Linux系统作为一款优秀且开源的现代操作系统，被科研教育界
 一般来说，在ubuntu系统中，选择带有LTS（long term support）版，从而获得三年以上的更新支持，比方说ubuntu 14.04LTS、ubuntu16.04LTS。我们这里就以ubuntu16.04为例。
 
 
-![图片.png](http://upload-images.jianshu.io/upload_images/5971286-77d1d83033e6279f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图片.png](picture/fun1.png)
 
 
 在安装完系统以后，需要手动安装的软件如下，可以根据自己需要有选择性地安装：

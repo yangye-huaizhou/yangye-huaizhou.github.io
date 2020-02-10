@@ -7,13 +7,13 @@ categories: virtualized-network-IO
 
 **概括来说，qemu和KVM在内存管理上的关系就是：在虚拟机启动时，qemu在qemu进程地址空间申请内存，即内存的申请是在用户空间完成的。通过kvm提供的API，把地址信息注册到KVM中，这样KVM中维护有虚拟机相关的slot，这些slot构成了一个完整的虚拟机物理地址空间。slot中记录了其对应的HVA，页面数、起始GPA等，利用它可以把一个GPA转化成HVA，这正是KVM维护EPT的技术核心。整个内存虚拟化可以分为两部分：qemu部分和kvm部分。qemu完成内存的申请，kvm实现内存的管理。**
 
-![qemu与KVM内存管理的分工.png](http://upload-images.jianshu.io/upload_images/5971286-1e105a126e1431ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![qemu与KVM内存管理的分工.png](picture/qemumemory1.png)
 
 - qemu中地址空间分两部分，两个全局变量system_memory和system_IO，其中system_memory是所有memory_region的父object，他们只负责管理内存。
 - 在KVM中，也有两个全局变量address_space_memory和address_space_memory_IO，与qemu中的memory_region对应，只有将HVA和GPA的对应关系注册到KVM模块的memslot，才可以生效成为EPT。
 
 
-![system_memory和address_space_memory等的关系.png](http://upload-images.jianshu.io/upload_images/5971286-9b28de7bdb6207a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![system_memory和address_space_memory等的关系.png](picture/qemumemory2.png)
 
  在qemu 2.9的前端virtio和dpdk17.05的后端vhost-user构成的虚拟队列中，会率先通过socket建立连接，将qemu中virtio的内存布局传给vhost，vhost收到包（该消息机制有自己的协议，暂称为msg）后，分析其中的信息，这里面通信包含一套自己写的协议。包含以下内容，均是在刚建立连接时候传递的：
 ```
@@ -96,7 +96,7 @@ err_mmap:
 ```
 另外，我们在实际运行系统的过程中发现，qemu的内存布局和vhost端的内存布局，虽是通过共享内存建立的，但是既不是一整块内存映射，也不是通过零碎的region一小块一小块的映射。它们的内存布局如下：
 
-![virtio前后端的内存布局.png](http://upload-images.jianshu.io/upload_images/5971286-190ec713c4c44f1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![virtio前后端的内存布局.png](picture/qemumemory3.png)
 在vhost这边只有两块region，而且像是将前端的内存region做了一个聚合得到的。回归代码，发现消息传递之前，传递的并非是memory_region变量，而是memory_region_section，在qemu的vhost_set_memory函数中，有这样一个操作：
 ```
 if (add) {

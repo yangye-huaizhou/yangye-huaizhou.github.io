@@ -16,7 +16,7 @@ iommu=pt intel_iommu=on default_hugepagesz=1G hugepagesz=1G hugepages=8
 ```
 如图所示：
 
-![grub设置.png](http://upload-images.jianshu.io/upload_images/5971286-7c2f5638ac3e0d1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![grub设置.png](picture/vhostinstall1.png)
 
 这里直接添加了大页的配置，DPDK的大页配置支持2MB大页和1GB大页，使用的时候根据具体情况而定，这里我们分配了8个1GB的大页。
 

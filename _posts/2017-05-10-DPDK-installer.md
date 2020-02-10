@@ -39,7 +39,7 @@ make config T=x86_64-native-linuxapp-gcc
 sed -ri 's,(PMD_PCAP=).*,\1y,' build/.config
 make
 ```
-![编译.png](http://upload-images.jianshu.io/upload_images/5971286-b31089dacb86636d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![编译.png](picture/dpdk1.png)
 
 编译过程如上图所示，其中如果有错，多数是由于依赖项，安装上依赖项就可以了。
 
@@ -55,7 +55,7 @@ echo 64 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
 ifconfig
 ```
 
-![网卡信息.png](http://upload-images.jianshu.io/upload_images/5971286-f18558334ce562b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![网卡信息.png](picture/dpdk2.png)
 
 从图中看出，两个网卡分别为enp3s0和wlp2s0。
 
@@ -74,7 +74,7 @@ python tools/dpdk-devbind.py --bind=igb_uio enp3s0//绑定igb_uio驱动到enp3s0
 ```
 python tools/dpdk-devbind.py --status  
 ```
-![网卡绑定.png](http://upload-images.jianshu.io/upload_images/5971286-8d36fe79520e744e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![网卡绑定.png](picture/dpdk3.png)
 从图中可以看到0000:03:00.0网卡绑定的是igb_uio驱动，网卡绑定成功。
 
 由于每次运行DPDK都需要分配大页和绑定网卡驱动，很麻烦，可以编写一个shell脚本，每次运行直接配置完成。
@@ -150,10 +150,10 @@ done
 
 运行如下图：
 
-![配置.png](http://upload-images.jianshu.io/upload_images/5971286-badb8fdfe672528d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![配置.png](picture/dpdk4.png)
 
 
-![恢复.png](http://upload-images.jianshu.io/upload_images/5971286-1721086435e75e69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![恢复.png](picture/dpdk5.png)
 
 # 3. 运行示例程序：
 
@@ -166,8 +166,8 @@ done
 
 运行截图：
 
-![示例程序运行1.png](http://upload-images.jianshu.io/upload_images/5971286-f835a43d49fabf56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![示例程序运行1.png](picture/dpdk6.png)
 在testpmd输入start开始转发流
 
-![示例程序运行2.png](http://upload-images.jianshu.io/upload_images/5971286-d2cceca3dffab786.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![示例程序运行2.png](picture/dpdk7.png)
 输入stop，停止并显示这期间的流量。quit退出程序。

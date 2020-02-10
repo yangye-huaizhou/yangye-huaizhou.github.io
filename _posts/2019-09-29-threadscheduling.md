@@ -10,7 +10,7 @@ categories: operation-system
 # 1.进程状态
 
 在linux操作系统，用```top```命令我们就能看到有许许多多正在运行的进程：
-![top命令输出.png](https://upload-images.jianshu.io/upload_images/5971286-3d0d9cee2e6f9fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![top命令输出.png](picture/schedule1.png)
 *这些属性中与进程调度有关的有NI、S，他们分别对应着进程的优先级和运行状态。*
 
 **在linux系统中，进程的运行状态主要分为5种：**
@@ -25,7 +25,7 @@ categories: operation-system
 
 进程在这些状态间来回切换的图示如下：
 
-![进程状态转换.png](https://upload-images.jianshu.io/upload_images/5971286-a24dea76dc395517.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![进程状态转换.png](picture/schedule2.png)
 
 进程的这些运行状态是为了让众多进程在有限的CPU核上跑起来而提出的。在现代多核处理器上，同一时间CPU只能被一个进程使用，也就意味着如何，实际上操作系统做了一些调度策略，比方说每个进程运行一段时间进入sleep状态给其他进程使用CPU的机会。只要这个周期够短，就能让用户感觉不到自己是在“运行-睡眠-运行-睡眠”的，这又被称为*“时间多路复用”*。同时为了保证同一个进程不会一直占据某个CPU，linux默认也是会将进程缓慢地在核间调度的。
 
@@ -205,7 +205,7 @@ int main(int argc,char** argv)
 
 效果是每运行一次schedule就会看到输出来一层*号。
 
-![运行效果.png](https://upload-images.jianshu.io/upload_images/5971286-ad427ef3ea937ab9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![运行效果.png](picture/schedule3.png)
 
 
 *引用：*

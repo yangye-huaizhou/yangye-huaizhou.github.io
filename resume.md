@@ -17,12 +17,12 @@ permalink: /resume/
 
 ### **EDUCATION**
 
-##### **Hunan University (HNU), Changsha, China, 09/2012–06/2016**
+##### **09/2012–06/2016, Hunan University (HNU), Changsha, China**
 **B.S.** in Computer Science and Technology
 * GPA：3.6 / 4.5
 * Rewards: National Scholarship (top 2%); first-class academic scholarship; first-class prize in the National College Student Computer Design Competition; third-class prize in the "FLTRP" National College Student English Writing Competition; Outstanding Graduates
 
-##### **Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China, 09/2016-06/2022**
+##### **09/2016-06/2022, Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China**
 **Ph.D.** student in Computer Network
 * GPA：3.54 / 4.0
 * Rewards: Excellence Award from the Institute Director; first-class academic scholarship; Merit Student
@@ -56,13 +56,13 @@ permalink: /resume/
 
 ### **PROJECT EXPERIENCE**
 
-* 10/2019–12/2020&emsp;Ph.D.&emsp;ICT&emsp;**Backbone network traffic collection and analysis**; *This project is funded by HUAWEI*
-* 01/2020–08/2020&emsp;Ph.D.&emsp;ICT&emsp;**CPU-cycle based Network QoS strategy in vSwitch of public cloud**; Design and implement an isolation enhanced QoS strategy in vSwitch and the main idea is to apportion the IO-dedicated CPU resources to tenants; *This project is in cooperation with Alibaba Cloud*
-* 02/2020–12/2020&emsp;Ph.D.&emsp;ICT&emsp;**Distributed machine learning network based on programmable switch**; Design and implement a connection aggregated TCP protocol based on P4 switch, LWIP (accelerated by DPDK) and PS-lite; *This project is in cooperation with Alibaba*
-* 01/2018–10/2018&emsp;Ph.D.&emsp;ICT&emsp;**vSwitch security isolation mechanism**; Design and implement two secure virtualized network I/O architectures based on vhost-user, source code has been opensourced; *This project is funded by Alibaba AIR project*
-* 10/2016–06/2017&emsp;Ph.D.&emsp;ICT&emsp;**CDN cache replacement strategy**; Data from China Mobile, conduct a journal paper
-* 09/2016–03/2017&emsp;Ph.D.&emsp;ICT&emsp;**A performance measurement tool for packet processing**; *This project is funded by HUAWEI*
-* 12/2015–06/2016&emsp;B.S.&emsp;HNU&emsp;**Port Mega-KV from GPU to Xeon Phi architecture**; Undergraduate graduation project
+* **Port Mega-KV from GPU to Xeon Phi architecture**; Undergraduate graduation project, 12/2015–06/2016
+* **A performance measurement tool for packet processing**; *This project is funded by HUAWEI*, 09/2016–03/2017
+* **CDN cache replacement strategy**; Data from China Mobile, conduct a journal paper, 10/2016–06/2017
+* **vSwitch security isolation mechanism**; Design and implement two secure virtualized network I/O architectures based on vhost-user, source code has been opensourced; *This project is funded by Alibaba AIR project*, 01/2018–10/2018
+* **Backbone network traffic collection and analysis**; *This project is funded by HUAWEI*, 10/2019–12/2020
+* **CPU-cycle based Network QoS strategy in vSwitch of public cloud**; Design and implement an isolation enhanced QoS strategy in vSwitch and the main idea is to apportion the IO-dedicated CPU resources to tenants; *This project is in cooperation with Alibaba Cloud*, 01/2020–08/2020
+* **Distributed machine learning network based on programmable switch**; Design and implement a connection aggregated TCP protocol based on P4 switch, LWIP (accelerated by DPDK) and PS-lite; *This project is in cooperation with Alibaba*, 02/2020–12/2020
 
 ### **PATENTS AND PAPERS**
 * **Ye Yang**, Haiyang Jiang, Yongzheng Liang, Yulei Wu, Yilong Lv, Xing Li and Gaogang Xie, Isolation Guarantee for Efficient Virtualized Network I/O on Cloud Platform, the 22nd IEEE International Conferences on High Performance Computing and Communications (HPCC 2020)

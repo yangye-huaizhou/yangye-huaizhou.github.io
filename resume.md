@@ -41,7 +41,7 @@ permalink: /resume/
 * Familiar with network architecture  
 * Familiar with data struct, operation system, ***Linux kernel*** and ***GNU C***
 * Familiar with ***DPDK, OpenvSwitch*** and other high performance userspace datapath development components
-* Project experience with ***QEMU/KVM, Floodlight SDN controller, LWIP userspace protocol stack and MegaKV *** opensource software  
+* Project experience with ***QEMU/KVM, Floodlight SDN controller, LWIP userspace protocol stack and MegaKV*** opensource software  
 
 **English Skills**  
 * CET-6 (512), extensive reading of English materials (papers, standards, datasheets)

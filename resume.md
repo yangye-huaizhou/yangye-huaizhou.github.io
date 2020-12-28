@@ -17,15 +17,15 @@ permalink: /resume/
 
 ### **EDUCATION**
 
-##### **09/2012–06/2016, Hunan University (HNU), Changsha, China**
-**B.S.** in Computer Science and Technology
-* GPA：3.6 / 4.5
-* Rewards: National Scholarship (top 2%); first-class academic scholarship; first-class prize in the National College Student Computer Design Competition; third-class prize in the "FLTRP" National College Student English Writing Competition; Outstanding Graduates
+* **09/2012–06/2016, Hunan University (HNU), Changsha, China**
+   * **B.S.** in Computer Science and Technology
+   * GPA：3.6 / 4.5
+   * Rewards: National Scholarship (top 2%); first-class academic scholarship; first-class prize in the National College Student Computer Design Competition; third-class prize in the "FLTRP" National College Student English Writing Competition; Outstanding Graduates
 
-##### **09/2016-06/2022, Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China**
-**Ph.D.** student in Computer Network
-* GPA：3.54 / 4.0
-* Rewards: Excellence Award from the Institute Director; first-class academic scholarship; Merit Student
+* **09/2016-06/2022, Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China**
+   * **Ph.D.** student in Computer Network
+   * GPA：3.54 / 4.0
+   * Rewards: Excellence Award from the Institute Director; first-class academic scholarship; Merit Student
 
 <!--
 &nbsp;|&nbsp;|&nbsp;

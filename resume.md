@@ -20,7 +20,7 @@ permalink: /resume/
 * **09/2012–06/2016, Hunan University (HNU), Changsha, China**
    * **B.S.** in Computer Science and Technology
    * GPA：3.6 / 4.5
-   * Rewards: National Scholarship (top 2%); first-class academic scholarship; first-class prize in the National College Student Computer Design Competition; third-class prize in the "FLTRP" National College Student English Writing Competition; Outstanding Graduates
+   * Rewards: National Scholarship (top 2%); first-class academic scholarship; first-class prize in the National College Student Computer Design Competition; third-class prize in the "FLTRP" National College Student English Writing Competition; Outstanding Graduate
 
 * **09/2016-06/2022, Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China**
    * **Ph.D.** student in Computer Network
@@ -36,22 +36,22 @@ permalink: /resume/
 
 ### **PERSONAL SKILLS**
 
-**Professional Abilities**  
+* **Professional Abilities**  
 
-* Familiar with network architecture  
-* Familiar with data struct, operation system, ***Linux kernel*** and ***GNU C***
-* Familiar with ***DPDK, OpenvSwitch*** and other high performance userspace datapath development components
-* Project experience with ***QEMU/KVM, Floodlight SDN controller, LWIP userspace protocol stack and MegaKV*** opensource software  
+   * Familiar with network architecture  
+   * Familiar with data struct, operation system, ***Linux kernel*** and ***GNU C***
+   * Familiar with ***DPDK, OpenvSwitch*** and other high performance userspace datapath development components
+   * Project experience with ***QEMU/KVM, Floodlight SDN controller, LWIP userspace protocol stack and MegaKV*** opensource software  
 
-**English Skills**  
-* CET-6 (512), extensive reading of English materials (papers, standards, datasheets)
+* **English Skills**  
+   * CET-6 (512), extensive reading of English materials (papers, standards, datasheets)
 
 ### **RESEARCH DIRECTION**
 
 * Virtualized network
 * Design and implementation of network based systems
 * High performance packet processing
-* The architecture of future internet, e.g. SDN, NFV.
+* The architecture of future internet, i.e. SDN, NFV.
 * Flow/packet schedule
 
 ### **PROJECT EXPERIENCE**

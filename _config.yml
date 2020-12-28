@@ -1,6 +1,6 @@
-title: Ye Yang
+title: Ye YANG
 description: My Personal Blog
-author: Ye Yang
+author: Ye YANG
 logo: /static/img/avatar.png
 github: https://github.com/ictyangye
 about: PHD student in ICT of CAS
@@ -9,9 +9,6 @@ baseurl: "https://ictyangye.github.io"
 url: "https://ictyangye.github.io"
 
 allowsearch: true
-
-disqus_shortname: aboutashu
-google_analytics: UA-72862926-1
 
 share:
   twitter_username: \#

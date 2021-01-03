@@ -56,7 +56,7 @@ permalink: /resume/
 
 ### **PROJECT EXPERIENCE**
 
-* **Port Mega-KV from GPU to Xeon Phi architecture**; Undergraduate graduation project, 12/2015–06/2016
+* **Port Mega-KV from GPU to Xeon Phi architecture**; Graduation project, 12/2015–06/2016
 * **A performance measurement tool for packet processing**; *This project is funded by HUAWEI*, 09/2016–03/2017
 * **CDN cache replacement strategy**; Data from China Mobile, conduct a journal paper, 10/2016–06/2017
 * **vSwitch security isolation mechanism**; Design and implement two secure virtualized network I/O architectures based on vhost-user, source code has been opensourced; *This project is funded by Alibaba AIR project*, 01/2018–10/2018

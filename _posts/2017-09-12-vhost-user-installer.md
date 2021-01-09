@@ -22,7 +22,7 @@ iommu=pt intel_iommu=on default_hugepagesz=1G hugepagesz=1G hugepages=8
 
 ## 2.然后编译DPDK
 
-DPDK默认编译成.a的静态链接库，但也可以修改DPDK文件夹下的config/common_base文件里的CONFIG_RTE_BUILD_SHARED_LIB=y （但有一点要注意的就是，common_base是生成所有平台下编译选项的基础，直接修改也会影响其他target下的编译，也可以仅仅修改生成的本平台下的config文件，或者lib库编译里面的build/.config）来编译成动态链接库。该文件是所有架构下最基础引用的配置文件，在文件中可以设置某些库不编译，以及是否编译允许debug等。
+DPDK默认编译成.a的静态链接库，但也可以修改DPDK文件夹下的config/common_base文件里的CONFIG_RTE_BUILD_SHARED_LIB=y （但有一点要注意的就是，common_base是生成所有平台下编译选项的基础，直接修改也会影响其他target下的编译，也可以仅仅修改生成的本平台下的config文件，或者lib库编译里面的build/.config）来编译成动态链接库。该文件是所有架构下最基础引用的配置文件，在文件中可以设置某些库不编译，以及是否编译允许debug等。***但是不建议编译成动态库，后续链接麻烦***
 
 之后就和官网教程一样，设置编译目标环境，config等
 
@@ -37,8 +37,6 @@ make
 make install
 ```
 make完成之后，如果选择的是编译成静态链接库，这段无视。如果编译成动态链接库，去build/lib文件夹下把整个文件夹里面的.so动态链接库文件全部复制到/usr/lib/dpdk/文件夹下，没有文件夹就建一个。然后在/etc/ld.so.conf.d/文件夹下建一个dpdk.conf文件，编辑dpdk.conf，写一句话：/usr/lib/dpdk。保存退出，命令行输入ldconfig，使系统自动加载的动态链接库生效。
-
-***也可以不这么做，但每次运行都需要改下环境变量，LD_LIBRARY_PATH指向我们刚刚编译好的lib文件夹。***
 
 ## 3.编译OVS
 在ovs文件夹内configure时加上--with-dpdk选项，即可与DPDK关联。

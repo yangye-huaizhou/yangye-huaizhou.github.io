@@ -121,6 +121,13 @@ d9fd8d79-b6c0-4f13-8369-4755085471ba
 至此，后端驱动vhost以及它之上的交换机已经启动了，处于等待状态。（但是qemu 2.7以上才支持重连功能）
 
 ## 4.再来安装qemu
+
+先安装依赖项：
+
+```
+sudo apt-get install zlib1g-dev libglib2.0-dev libncurses5-dev libpixman-1-dev
+```
+
 qemu安装比较简单，直接configure、make、make install即可。
 创建镜像，必须要qcow2格式：
 

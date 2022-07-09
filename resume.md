@@ -13,7 +13,18 @@ permalink: /resume/
 
 <p><font color="#20B2AA">Date of birth:&nbsp;</font>Jan 20th,&nbsp;1995</p>
 
-<p><font color="#20B2AA">Email: </font>yangye@ict.ac.cn</p>
+<p><font color="#20B2AA">Email: </font>yangye1995120@outlook.com (Primary); 2319598303@qq.com</p>
+
+
+### **WORK EXPERIENCE**
+
+* **01/2022-now, Alibaba Cloud, Hangzhou, China**
+   * **Senior R&D engineer** dedicated in vSwitch
+   * Duty: seeking to build the most powerful vSwitch to serve the hyperscale virtual networks
+
+* **01/2022-now, Alibaba Postdoctoral Workstation & Zhejiang University, Hangzhou, China**
+   * **Joint Postdoctoral Fellow**
+   * Research area: high performance network forwarding, performance isolation
 
 ### **EDUCATION**
 
@@ -22,10 +33,13 @@ permalink: /resume/
    * GPA：3.6 / 4.5
    * Rewards: National Scholarship (top 2%); first-class academic scholarship; first-class prize in the National College Student Computer Design Competition; third-class prize in the "FLTRP" National College Student English Writing Competition; Outstanding Graduate
 
-* **09/2016-06/2022, Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China**
+* **09/2016-01/2022, Institute of Computing Technology, Chinese Academy of Sciences(ICT, CAS), Beijing, China**
    * **Ph.D.** student in Computer Network
    * GPA：3.54 / 4.0
-   * Rewards: Excellence Award from the Institute Director; first-class academic scholarship; Merit Student
+   * Rewards: Excellence Award from the Institute Director; first-class academic scholarship; Merit Student; Ph.D. National Scholarship
+
+* **09/2019-now, Laboratoire d'Informatique de Paris 6 (LIP6), Sorbonne Université, Paris, France**
+   * **joint Ph.D.** (remote co-supervised)
 
 <!--
 &nbsp;|&nbsp;|&nbsp;
@@ -63,8 +77,12 @@ permalink: /resume/
 * **Backbone network traffic collection and analysis**; *This project is funded by HUAWEI*, 10/2019–12/2020
 * **CPU-cycle based Network QoS strategy in vSwitch of public cloud**; Design and implement an isolation enhanced QoS strategy in vSwitch and the main idea is to apportion the IO-dedicated CPU resources to tenants; *This project is in cooperation with Alibaba Cloud*, 01/2020–08/2020
 * **Distributed machine learning network based on programmable switch**; Design and implement a connection aggregated TCP protocol based on P4 switch, LWIP (accelerated by DPDK) and PS-lite; *This project is in cooperation with Alibaba*, 02/2020–12/2020
+* **CPU cycles isolation in vSwitch**; Design and implement a CPU-cycle based QoS mechanism in software vSwitch; *This project is in cooperation with Alibaba*, 03/2020–12/2020
+* **Flow Table isolation in vSwitch**; Design and implement separated flow table in software vSwitch for preventing TSE attack; *This project is in cooperation with Alibaba*, 02/2021–06/2021
 
 ### **PATENTS AND PAPERS**
+* **Ye Yang**, Haiyang Jiang, Guangxing Zhang, Xin Wang, Yilong Lv, Xing Li, Serge Fdida and Gaogang Xie, S2H: Hypervisor as a setter within Virtualized Network I/O for VM isolation on cloud platform (Computer Networks, 2021)
+* **Ye Yang**, Haiyang Jiang, Yulei Wu, Chunjing Han, Yilong Lv, Xing Li, Bowen Yang, Serge Fdida and Gaogang Xie, C2QoS: Network QoS guarantee in vSwitch through CPU-cycle management (Journal of Systems Architecture, 2021)
 * **Ye Yang**, Haiyang Jiang, Yongzheng Liang, Yulei Wu, Yilong Lv, Xing Li and Gaogang Xie, Isolation Guarantee for Efficient Virtualized Network I/O on Cloud Platform, the 22nd IEEE International Conferences on High Performance Computing and Communications (HPCC 2020)
 * **Ye Yang**, Haiyang Jiang, Yulei Wu, Yilong Lv, Xing Li and Gaogang Xie, C2QoS: CPU-Cycle based Network QoS Strategy in vSwitch of Public Cloud, the 17th IFIP/IEEE International Symposium on Integrated Network Management (IM 2021)
 * 韩春静, **杨晔**, 吕红蕾,等. 面向应用感知的骨干网缓存方法研究[J]. 通信学报, 2017, 038(012):73-85.

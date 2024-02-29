@@ -10,7 +10,7 @@ locale                   : "zh-CN"
 title                    : "Ye YANG (杨晔)"
 title_separator          : "-"
 name                     : &name "Ye YANG"
-description              : &description "Senior R&D engineer in Alibaba Cloud, and postdoc in Alibaba & Zhejiang University"
+description              : &description "Employed by Alibaba Cloud, researcher & developer on network virtualization"
 url                      : https://yangye-huaizhou.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "yangye-huaizhou/yangye-huaizhou.github.io/"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Ye YANG"
   avatar           : "profile.jpg"
-  bio              : "Senior R&D engineer in Alibaba Cloud, and postdoc in Alibaba & Zhejiang University"
+  bio              : "Employed by Alibaba Cloud, researcher & developer on network virtualization"
   location         : "Hangzhou, China"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"

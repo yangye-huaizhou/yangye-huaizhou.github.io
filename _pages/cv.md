@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -11,13 +11,13 @@ redirect_from:
 
 Education
 ======
-* **Ph.D. in Computer System Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS), 09/2016-01/2022**
+* **Ph.D. in Computer System Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS, in China), 09/2016-01/2022**
    * Awards: National Scholarship for Doctoral Students
 
-* **joint Ph.D. in 'informatique, télécomunications et électronique', Laboratoire d'Informatique de Paris 6 (LIP6), Sorbonne Université, 03/2021-02/2023**
+* **joint Ph.D. in 'informatique, télécomunications et électronique', Laboratoire d'Informatique de Paris 6 (LIP6), Sorbonne Université (in France), 02/2021-02/2023**
    * remote co-supervised, the time delay is caused by COVID-19 epidemic
 
-* **B.S. in Computer Science and Technology, Hunan University (HNU), 09/2012–06/2016**
+* **B.S. in Computer Science and Technology, Hunan University (HNU, in China), 09/2012–06/2016**
    * Awards: National Scholarship (top 2%); the first prize in the Chinese Collegiate Computing Competition
 
 Work Experience

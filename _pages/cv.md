@@ -1,10 +1,11 @@
 ---
 layout: archive
-title: ""
+title: "Ye Yang's Resume"
 permalink: /cv/
 author_profile: true
 redirect_from:
-  - /resume
+  - /resume.html
+  - /cv.html
 ---
 
 {% include base_path %}
@@ -60,13 +61,13 @@ Computer Networks (***CN***), 2021
 **Ye Yang**, Haiyang Jiang, Yulei Wu, Chunjing Han, Yilong Lv, Xing Li, Bowen Yang, Serge Fdida, Gaogang Xie.  
 Journal of Systems Architecture (***JSA***), 2021
 
-* **Isolation Guarantee for Efficient Virtualized Network I/O on Cloud Platform.**  
-**Ye Yang**, Haiyang Jiang, Yongzheng Liang, Yulei Wu, Yilong Lv, Xing Li, Gaogang Xie.  
-IEEE International Conferences on High Performance Computing and Communications (***HPCC***), 2020
-
 * **C2QoS: CPU-Cycle based Network QoS Strategy in vSwitch of Public Cloud.**  
 **Ye Yang**, Haiyang Jiang, Yulei Wu, Yilong Lv, Xing Li, Gaogang Xie.  
 IFIP/IEEE International Symposium on Integrated Network Management (***IM***), 2021
+
+* **Isolation Guarantee for Efficient Virtualized Network I/O on Cloud Platform.**  
+**Ye Yang**, Haiyang Jiang, Yongzheng Liang, Yulei Wu, Yilong Lv, Xing Li, Gaogang Xie.  
+IEEE International Conferences on High Performance Computing and Communications (***HPCC***), 2020
 
 * **A Massively Multi-Tenant Virtualized Network Intrusion Prevention Service on NFV platform.**  
 Haiyang Jiang, **Ye Yang**, Hongtao Guan, Kave Salamatian, Gaogang Xie.  

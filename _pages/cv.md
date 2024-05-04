@@ -41,6 +41,10 @@ Research Interests
 
 Publications
 ======
+* **Triton: A Flexible Hardware Offloading Architecture for Accelerating Apsara vSwitch in Alibaba Cloud.**   
+Xing Li, Xiaochong Jiang, **Ye Yang**, Lilong Chen, Yi Wang, Chao Wang, Chao Xu, Yilong Lv, Bowen Yang, Taotao Wu, Haifeng Gao, Zikang Chen, Yisong Qiao, Hongwei Ding, Yijian Dong, Hang Yang, Jianming Song, Jianyuan Lu, Pengyu Zhang, Chengkun Wei, Zihui Zhang, Wenzhi Chen, Qinming He, Shunmin Zhu. (**Co-first author**)  
+ACM Special Interest Group on Data Communication (***SIGCOMM***), 2024
+
 * **CloudPlanner: Minimizing Upgrade Risk of Virtual Network Devices for Large-Scale Cloud Networks.**   
 Xin He, Enhuan Dong, Jiahai Yang, Shize Zhang, Zhiliang Wang, Zejie Wang, **Ye Yang**, Jun Zhou, Xiaoqing Sun, Enge Song, Jianyuan Lu, Biao Lyu, Shunmin Zhu.  
 IEEE Conference on Computer Communications (***INFOCOM***), 2024

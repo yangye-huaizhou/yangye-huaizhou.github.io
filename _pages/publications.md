@@ -7,7 +7,7 @@ redirect_from:
   - /publications.html
   - /papers.html
 ---
-* **Triton: A Flexible Hardware Offloading Architecture for Accelerating Apsara vSwitch in Alibaba Cloud**   
+* **Triton: A Flexible Hardware Offloading Architecture for Accelerating Apsara vSwitch in Alibaba Cloud** [[pdf](http://yangye-huaizhou.github.io/files/Triton.pdf)]  
 Xing Li, Xiaochong Jiang, **Ye Yang**, Lilong Chen, Yi Wang, Chao Wang, Chao Xu, Yilong Lv, Bowen Yang, Taotao Wu, Haifeng Gao, Zikang Chen, Yisong Qiao, Hongwei Ding, Yijian Dong, Hang Yang, Jianming Song, Jianyuan Lu, Pengyu Zhang, Chengkun Wei, Zihui Zhang, Wenzhi Chen, Qinming He, Shunmin Zhu. (**Co-first author**)  
 ACM Special Interest Group on Data Communication (***SIGCOMM***), 2024
 

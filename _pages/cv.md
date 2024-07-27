@@ -13,9 +13,11 @@ redirect_from:
 Education
 ======
 * **Ph.D. in Computer System Architecture, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS, in China), 09/2016-01/2022**
+   * Supervisor: Gaogang Xie
    * Awards: National Scholarship for Doctoral Students
 
 * **joint Ph.D. in 'informatique, télécomunications et électronique', Laboratoire d'Informatique de Paris 6 (LIP6), Sorbonne Université (in France), 02/2021-02/2023**
+   * Supervisor: Serge Fdida, Gaogang Xie (co-supervisor)
    * remote co-supervised, the time delay is caused by COVID-19 epidemic
 
 * **B.S. in Computer Science and Technology, Hunan University (HNU, in China), 09/2012–06/2016**

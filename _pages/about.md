@@ -14,6 +14,10 @@ After graduation, he joined Luoshen Cloud Network Department of Alibaba Cloud to
 
 Publications
 ======
+* **Zebra: Accelerating Distributed Sparse Deep Training with In-network Gradient Aggregation for Hot Parameters**   
+Heng Pan, Penglai Cui, Zhenyu Li, Ru Jia, Penghao Zhang, Leilei Zhang, **Ye Yang**, Jiahao Wu, Mathy Laurent, Gaogang Xie. (**This work has been done when I was in ICT, CAS**)   
+IEEE International Conference on Network Protocols (***ICNP***), 2024
+
 * **Triton: A Flexible Hardware Offloading Architecture for Accelerating Apsara vSwitch in Alibaba Cloud** [[pdf](http://yangye-huaizhou.github.io/files/Triton.pdf)]   
 Xing Li, Xiaochong Jiang, **Ye Yang**, Lilong Chen, Yi Wang, Chao Wang, Chao Xu, Yilong Lv, Bowen Yang, Taotao Wu, Haifeng Gao, Zikang Chen, Yisong Qiao, Hongwei Ding, Yijian Dong, Hang Yang, Jianming Song, Jianyuan Lu, Pengyu Zhang, Chengkun Wei, Zihui Zhang, Wenzhi Chen, Qinming He, Shunmin Zhu. (**Co-first author**)  
 ACM Special Interest Group on Data Communication (***SIGCOMM***), 2024

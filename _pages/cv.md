@@ -43,6 +43,14 @@ Research Interests
 
 Publications
 ======
+* **Nezha: SmartNIC-based Virtual Switch Load Sharing**   
+Xing Li, Enge Song, Bowen Yang, Tian Pan, **Ye Yang**, Qiang Fu, Yang Song, Yilong Lv, Zikang Chen, Jianyuan Lu, Shize Zhang, Xiaoqing Sun, Rong Wen, Biao Lyu, Zhigang Zong, Qinming He, Shunmin Zhu.  
+ACM Special Interest Group on Data Communication (***SIGCOMM***), 2025 (**Accepted, to be published**)
+
+* **Hermes: Enhancing Layer-7 Cloud Load Balancers with Userspace-Directed I/O Event Notification**   
+Tian Pan, Enge Song, Yueshang Zuo, Shaokai Zhang, Song Yang, Jiangu Zhao, Wengang Hou, Jianyuan Lu, Xiaoqing Sun, Shize Zhang, **Ye Yang**, Jiao Zhang, Tao Huang, Biao Lyu, Xing Li, Rong Wen, Zhigang Zong, Shunmin Zhu.  
+ACM Special Interest Group on Data Communication (***SIGCOMM***), 2025 (**Accepted, to be published**)
+
 * **Zebra: Accelerating Distributed Sparse Deep Training with In-network Gradient Aggregation for Hot Parameters**   
 Heng Pan, Penglai Cui, Zhenyu Li, Ru Jia, Penghao Zhang, Leilei Zhang, **Ye Yang**, Jiahao Wu, Mathy Laurent, Gaogang Xie.  
 IEEE International Conference on Network Protocols (***ICNP***), 2024

@@ -9,22 +9,26 @@ redirect_from:
 
 **<font size=5>Ye YANG</font>** graduated from the Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS) in 2022, and was awarded Ph.D. degree under the co-supervision of both the ICT, CAS (advised by [Prof. Gaogang Xie](https://people.ucas.ac.cn/~gaogang)) and Sorbonne University (advised by [Prof. Serge Fdida](https://www-npa.lip6.fr/~sf/), in France).  
 
-After graduation, he joined Luoshen Cloud Network Department of Alibaba Cloud to engage in R&D for virtual network architecture and also commit to the academic research. During the period of 2022-2024, he conducted research on "high-performance vSwitch for large-scale cloud networks" at the joint postdoctoral workstation of Alibaba and Zhejiang University. His research areas include software defined networks, network virtualization, software-hardware co-design, etc. He is actively seeking cooperation with the academic community to solve real problems in the production environments.
+After graduation, he joined Luoshen Cloud Network Department of Alibaba Cloud to engage in R&D for virtual network architecture and also commit to the academic research. During the period of 2022-2024, he conducted research on "high-performance vSwitch for large-scale cloud networks" at the joint postdoctoral workstation of Alibaba and Zhejiang University. His research areas include AI infra, network virtualization, software-hardware co-design, etc. He is actively seeking cooperation with the academic community to solve real problems in the production environments.
 
 
-Publications
+Selected Publications
 ======
+* **Spillway: Orchestrating DPU and Host into a Unified vSwitching Fabric**   
+Xiaochong Jiang, Dian Fan, Yilong Lv, Naixuan Guan, Qiming Zhao, Sihan Fu, **Ye Yang**, Yu Zhou, Xuyang Ge, Denghui Wu, Yibin Shen, Guochun Hong, Zhipeng Zhang, Yijian Dong, Yiquan Chen, Shaoliang An, Zhixiong Guo, Yixin Xie, Yisong Qiao, Hongwei Ding, Haitao Jiang, Yimin Liu, Tao Shen, Baosheng Wang, Shize Zhang, Bowen Yang, Zikang Chen, Xiaomin Wu, Rong Wen, Song Yang, Jun Liang, Zhigang Zong, Xing Li, Chengkun Wei, Shunmin Zhu, Wenzhi Chen.   
+ACM Special Interest Group on Data Communication (***SIGCOMM***), 2026 (**Accepted, to be published**)
+
 * **Bifrost: Alibaba's Next-Generation VPC Network with High-Performance Multipath Reliable Transport**   
 Zihao Fan, Xing Li, **Ye Yang**, Bo Jiang, Bowen Yang, Yilong Lv, Yuke Hong, Yinian Zhou, Junnan Cai, Jiayue Xu, Yunrui Hu, Zhao Gao, Ke Sun, Yimin Liu, Xiangdong Zhang, Enge Song, Jianyuan Lu, Xiaoqing Sun, Shize Zhang, Haonan Li, Mingxin Li, Changgang Zheng, Song Yang, Jun Liang, Biao Lyu, Rong Wen, Zhigang Zong, Shunmin Zhu.  
-USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026 (**Accepted, to be published**)
+USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026
 
 * **ZooRoute: Enhancing Cloud-Scale Network Reliability via Candidate Path Provisioning and Overlay Proactive Rerouting**   
 Xiaoqing Sun, Xing Li, Xionglie Wei, Tian Pan, Ju Zhang, Bowen Yang, Yi Wang, **Ye Yang**, Yu Qi, Le Yu, Chenhao Jia, Zhanlong Zhang, Xinyu Chen, Xiaobo Xue, Jianyuan Lu, Shize Zhang, Enge Song, Yang Song, Rong Wen, Biao Lyu, Yang Xu, Shunmin Zhu.  
-USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026 (**Accepted, to be published**)
+USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026
 
 * **CStar Gateway: Augmenting Public Cloud Infrastructure for Heterogeneous Network Function Virtualization**   
 Haonan Li, Tian Pan, Jin Ke, Baohai Hu, Changgang Zheng, Enge Song, Zhi Xu, **Ye Yang**, Bowen Yang, Donglin Lai, Yisong Qiao, Bengbeng Xue, Jianyuan Lu, Xiaoqing Sun, Shize Zhang, Zihao Fan, Mingxin Li, Song Yang, Jun Liang, Xionglie Wei, Biao Lyu, Rong Wen, Zhigang Zong, Jiao Zhang, Tao Huang, Shunmin Zhu.  
-USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026 (**Accepted, to be published**)
+USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026
 
 * **Distributed Rate Limiting under Decentralized Cloud Networks**   
 Xiang Hu, Tianyu Xu, Lilong Chen, Xiaochong Jiang, **Ye Yang**, Liming Ye, Xu Wang, Yilong Lv, Chenhao Jia, Yongwang Wu, Zhigang Zong, Xing Li, Bingqian Lu, Shunmin Zhu, Chengkun Wei, Wenzhi Chen.  
@@ -63,7 +67,19 @@ Computer Networks (***CN***), 2021
 Journal of Systems Architecture (***JSA***), 2021
 
 
+Talks
+======
+* **Bifrost: Alibaba's Next-Generation VPC Network with High-Performance Multipath Reliable Transport** ([slides](https://www.usenix.org/system/files/nsdi26_slides-fan.pdf))   
+@USENIX NSDI 2025, Renton, USA, 2026-05-04
 
+* **Triton: A Flexible Hardware Offloading Architecture for Accelerating Apsara vSwitch in Alibaba Cloud** ([video](https://www.youtube.com/watch?v=8unmK6Gb5Lg))   
+@ACM SIGCOMM 2024, Sydney, Australia, 2024-08-07
+
+* **The industry-academia collaboration in Alibaba Luoshen Cloud Network**   
+@ACM SIGCOMM 2024, Sydney, Australia, 2024-08-05
+
+* **Achelous: Enabling Programmability, Elasticity, and Reliability in Hyperscale Cloud Networks**   
+@ACM TURC 2023, Wuhan, China, 2023-07-29
 
 
 We are hiring...

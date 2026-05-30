@@ -7,17 +7,21 @@ redirect_from:
   - /publications.html
   - /papers.html
 ---
+* **Spillway: Orchestrating DPU and Host into a Unified vSwitching Fabric**   
+Xiaochong Jiang, Dian Fan, Yilong Lv, Naixuan Guan, Qiming Zhao, Sihan Fu, **Ye Yang**, Yu Zhou, Xuyang Ge, Denghui Wu, Yibin Shen, Guochun Hong, Zhipeng Zhang, Yijian Dong, Yiquan Chen, Shaoliang An, Zhixiong Guo, Yixin Xie, Yisong Qiao, Hongwei Ding, Haitao Jiang, Yimin Liu, Tao Shen, Baosheng Wang, Shize Zhang, Bowen Yang, Zikang Chen, Xiaomin Wu, Rong Wen, Song Yang, Jun Liang, Zhigang Zong, Xing Li, Chengkun Wei, Shunmin Zhu, Wenzhi Chen.   
+ACM Special Interest Group on Data Communication (***SIGCOMM***), 2026 (**Accepted, to be published**)
+
 * **Bifrost: Alibaba's Next-Generation VPC Network with High-Performance Multipath Reliable Transport**   
 Zihao Fan, Xing Li, **Ye Yang**, Bo Jiang, Bowen Yang, Yilong Lv, Yuke Hong, Yinian Zhou, Junnan Cai, Jiayue Xu, Yunrui Hu, Zhao Gao, Ke Sun, Yimin Liu, Xiangdong Zhang, Enge Song, Jianyuan Lu, Xiaoqing Sun, Shize Zhang, Haonan Li, Mingxin Li, Changgang Zheng, Song Yang, Jun Liang, Biao Lyu, Rong Wen, Zhigang Zong, Shunmin Zhu.  
-USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026 (**Accepted, to be published**)
+USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026
 
 * **ZooRoute: Enhancing Cloud-Scale Network Reliability via Candidate Path Provisioning and Overlay Proactive Rerouting**   
 Xiaoqing Sun, Xing Li, Xionglie Wei, Tian Pan, Ju Zhang, Bowen Yang, Yi Wang, **Ye Yang**, Yu Qi, Le Yu, Chenhao Jia, Zhanlong Zhang, Xinyu Chen, Xiaobo Xue, Jianyuan Lu, Shize Zhang, Enge Song, Yang Song, Rong Wen, Biao Lyu, Yang Xu, Shunmin Zhu.  
-USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026 (**Accepted, to be published**)
+USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026
 
 * **CStar Gateway: Augmenting Public Cloud Infrastructure for Heterogeneous Network Function Virtualization**   
 Haonan Li, Tian Pan, Jin Ke, Baohai Hu, Changgang Zheng, Enge Song, Zhi Xu, **Ye Yang**, Bowen Yang, Donglin Lai, Yisong Qiao, Bengbeng Xue, Jianyuan Lu, Xiaoqing Sun, Shize Zhang, Zihao Fan, Mingxin Li, Song Yang, Jun Liang, Xionglie Wei, Biao Lyu, Rong Wen, Zhigang Zong, Jiao Zhang, Tao Huang, Shunmin Zhu.  
-USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026 (**Accepted, to be published**)
+USENIX Symposium on Networked Systems Design and Implementation (***NSDI***), 2026
 
 * **Distributed Rate Limiting under Decentralized Cloud Networks**   
 Xiang Hu, Tianyu Xu, Lilong Chen, Xiaochong Jiang, **Ye Yang**, Liming Ye, Xu Wang, Yilong Lv, Chenhao Jia, Yongwang Wu, Zhigang Zong, Xing Li, Bingqian Lu, Shunmin Zhu, Chengkun Wei, Wenzhi Chen.  
